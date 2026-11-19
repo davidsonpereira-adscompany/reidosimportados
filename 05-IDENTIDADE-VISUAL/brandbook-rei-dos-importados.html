@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Brandbook oficial do Rei dos Importados: logo, cores, tipografia, linguagem visual e tom de voz da marca.">
+<title>Brandbook &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --preto: #0A0A0A;
+    --grafite: #161616;
+    --carvao: #1E1E1E;
+    --ouro: #C9A24B;
+    --ouro-escuro: #A8842F;
+    --ouro-claro: #E0C27E;
+    --marfim: #F5F1E8;
+    --cinza: #8A8A8A;
+    --borda: rgba(201,162,75,0.18);
+    --borda-suave: rgba(255,255,255,0.06);
+    --laranja-ads: #FF5C00;
+    --cinzel: 'Cinzel', serif;
+    --inter: 'Inter', -apple-system, sans-serif;
+    --playfair: 'Playfair Display', Georgia, serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--preto);
+    color: var(--marfim);
+    font-family: var(--inter);
+    font-size: 15px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--borda-suave);
+    padding: 14px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .top-bar-name { font-family: var(--playfair); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .top-bar-name em { font-style: italic; color: var(--laranja-ads); }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--laranja-ads); text-decoration: none;
+    border: 1px solid rgba(255,92,0,0.25);
+    padding: 8px 18px; border-radius: 20px; transition: all 0.3s;
+  }
+  .btn-voltar:hover { background: var(--laranja-ads); color: #fff; }
+
+  /* ===== CAPA ===== */
+  .capa {
+    min-height: min(88vh, 780px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    position: relative;
+    overflow: hidden;
+    background: radial-gradient(ellipse 70% 50% at 50% 38%, rgba(201,162,75,0.10) 0%, transparent 65%), var(--preto);
+  }
+  .capa img.logo-capa { width: min(380px, 70vw); height: auto; margin-bottom: 36px; }
+  .capa-tag {
+    font-size: 0.62rem; font-weight: 600; letter-spacing: 0.5em; text-transform: uppercase;
+    color: var(--ouro); margin-bottom: 20px;
+  }
+  .capa h1 { font-family: var(--cinzel); font-size: clamp(2rem, 6vw, 3.6rem); font-weight: 600; letter-spacing: 0.08em; line-height: 1.15; color: var(--marfim); }
+  .capa h1 span { color: var(--ouro); }
+  .capa-linha { width: 70px; height: 2px; background: var(--ouro); margin: 28px auto; }
+  .capa p { font-size: 0.95rem; color: var(--cinza); font-weight: 300; max-width: 540px; line-height: 1.8; }
+
+  /* ===== ESTRUTURA ===== */
+  .container { max-width: 1020px; margin: 0 auto; padding: 0 32px; }
+  .sec { padding: 88px 0 40px; }
+  .sec-num {
+    font-family: var(--cinzel);
+    font-size: 0.78rem; letter-spacing: 0.4em; text-transform: uppercase;
+    color: var(--ouro); margin-bottom: 14px; text-align: center;
+  }
+  .sec-title {
+    font-family: var(--cinzel);
+    font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+    font-weight: 600; letter-spacing: 0.06em;
+    text-align: center; line-height: 1.25; margin-bottom: 14px;
+  }
+  .sec-sub { text-align: center; font-size: 0.92rem; color: var(--cinza); font-weight: 300; max-width: 680px; margin: 0 auto 48px; line-height: 1.8; }
+  .divisor { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(201,162,75,0.3), transparent); }
+
+  /* ===== MANIFESTO ===== */
+  .manifesto {
+    background: var(--grafite);
+    border: 1px solid var(--borda);
+    border-radius: 16px;
+    padding: clamp(32px, 6vw, 64px);
+    text-align: center;
+  }
+  .manifesto p { font-family: var(--playfair); font-style: italic; font-size: clamp(1.05rem, 2.4vw, 1.45rem); line-height: 1.9; color: var(--marfim); max-width: 760px; margin: 0 auto; }
+  .manifesto p strong { color: var(--ouro); font-style: normal; font-family: var(--cinzel); font-weight: 600; font-size: 0.92em; letter-spacing: 0.04em; }
+  .essencia-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 20px; }
+  @media (max-width: 760px) { .essencia-grid { grid-template-columns: 1fr; } }
+  .essencia {
+    background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px;
+    padding: 28px; text-align: center;
+  }
+  .essencia h4 { font-family: var(--cinzel); font-size: 0.82rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .essencia p { font-size: 0.85rem; color: #BBB; font-weight: 300; }
+
+  /* ===== LOGO ===== */
+  .logo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .logo-grid { grid-template-columns: 1fr; } }
+  .logo-card {
+    background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px;
+    padding: 24px; text-align: center;
+  }
+  .logo-card.destaque-ouro { border-color: var(--borda); }
+  .logo-card img { width: 100%; max-width: 420px; height: auto; border-radius: 10px; }
+  .logo-card h4 { font-family: var(--cinzel); font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--ouro); margin: 18px 0 6px; }
+  .logo-card p { font-size: 0.8rem; color: var(--cinza); font-weight: 300; line-height: 1.6; }
+  .logo-antes { filter: grayscale(0.1); opacity: 0.9; }
+  .selo {
+    display: inline-block; font-size: 0.58rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 12px; border-radius: 12px; margin-bottom: 12px;
+  }
+  .selo-antes { background: rgba(239,68,68,0.1); color: #EF4444; border: 1px solid rgba(239,68,68,0.25); }
+  .selo-nova { background: rgba(201,162,75,0.12); color: var(--ouro); border: 1px solid rgba(201,162,75,0.35); }
+
+  .regras-logo { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+  @media (max-width: 760px) { .regras-logo { grid-template-columns: 1fr; } }
+  .regra-col { background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px; padding: 28px; }
+  .regra-col.faz { border-top: 3px solid var(--ouro); }
+  .regra-col.nao-faz { border-top: 3px solid #EF4444; }
+  .regra-col h4 { font-family: var(--cinzel); font-size: 0.88rem; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 16px; }
+  .regra-col ul { list-style: none; }
+  .regra-col li { font-size: 0.84rem; color: #BBB; font-weight: 300; padding: 8px 0 8px 26px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .regra-col li:last-child { border-bottom: none; }
+  .regra-col.faz li::before { content: '✓'; position: absolute; left: 0; color: var(--ouro); font-weight: 700; }
+  .regra-col.nao-faz li::before { content: '✕'; position: absolute; left: 0; color: #EF4444; font-weight: 700; }
+
+  /* ===== PALETA ===== */
+  .paleta-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 860px) { .paleta-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .paleta-grid { grid-template-columns: 1fr; } }
+  .cor-card { border-radius: 14px; overflow: hidden; border: 1px solid var(--borda-suave); background: var(--grafite); }
+  .cor-amostra { height: 130px; position: relative; }
+  .cor-amostra .pct { position: absolute; top: 12px; right: 14px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; padding: 3px 10px; border-radius: 10px; background: rgba(0,0,0,0.45); color: #fff; }
+  .cor-info { padding: 16px 18px; }
+  .cor-info h4 { font-family: var(--cinzel); font-size: 0.82rem; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 4px; }
+  .cor-info p { font-size: 0.75rem; color: var(--cinza); font-weight: 300; }
+  .cor-info .hex { font-family: monospace; font-size: 0.8rem; color: var(--ouro); letter-spacing: 0.06em; }
+
+  /* ===== TIPOGRAFIA ===== */
+  .tipo-card { background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px; padding: clamp(24px, 5vw, 48px); margin-bottom: 20px; }
+  .tipo-rotulo { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--ouro); margin-bottom: 18px; }
+  .tipo-mostra-cinzel { font-family: var(--cinzel); font-size: clamp(1.8rem, 5vw, 3rem); font-weight: 600; letter-spacing: 0.08em; line-height: 1.2; }
+  .tipo-mostra-inter { font-family: var(--inter); font-size: clamp(1.1rem, 2.6vw, 1.5rem); font-weight: 400; line-height: 1.5; }
+  .tipo-abc { font-size: 0.95rem; color: var(--cinza); margin-top: 16px; word-break: break-all; font-weight: 300; }
+  .tipo-uso { font-size: 0.8rem; color: #BBB; margin-top: 14px; padding-top: 14px; border-top: 1px dashed var(--borda-suave); font-weight: 300; }
+  .hierarquia { display: grid; gap: 0; background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px; overflow: hidden; }
+  .hier-linha { display: flex; align-items: baseline; gap: 20px; padding: 18px 28px; border-bottom: 1px solid rgba(255,255,255,0.04); flex-wrap: wrap; }
+  .hier-linha:last-child { border-bottom: none; }
+  .hier-tag { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--ouro); width: 130px; flex-shrink: 0; }
+
+  /* ===== LINGUAGEM VISUAL ===== */
+  .ling-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .ling-grid { grid-template-columns: 1fr; } }
+  .ling-card { background: var(--grafite); border: 1px solid var(--borda-suave); border-left: 3px solid var(--ouro); border-radius: 0 12px 12px 0; padding: 22px 26px; }
+  .ling-card h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 6px; color: var(--marfim); }
+  .ling-card p { font-size: 0.83rem; color: #AAA; font-weight: 300; line-height: 1.65; }
+
+  /* ===== UNIVERSO ===== */
+  .universo-strip { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; }
+  .uni-item { text-align: center; width: 110px; }
+  .uni-circ { width: 96px; height: 96px; border-radius: 50%; overflow: hidden; margin: 0 auto 10px; border: 2px solid var(--ouro); }
+  .uni-circ img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .uni-nome { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #CCC; }
+  .mockup-box { background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px; padding: 24px; text-align: center; margin-top: 28px; }
+  .mockup-box img { width: min(380px, 100%); border-radius: 10px; border: 1px solid var(--carvao); }
+  .mockup-box p { font-size: 0.75rem; color: var(--cinza); margin-top: 12px; font-weight: 300; }
+
+  /* ===== TOM DE VOZ ===== */
+  .voz-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .voz-grid { grid-template-columns: 1fr; } }
+  .voz-card { background: var(--grafite); border: 1px solid var(--borda-suave); border-radius: 14px; padding: 28px; }
+  .voz-card h4 { font-family: var(--cinzel); font-size: 0.85rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ouro); margin-bottom: 14px; }
+  .voz-card p, .voz-card li { font-size: 0.86rem; color: #BBB; font-weight: 300; line-height: 1.7; }
+  .voz-card ul { list-style: none; }
+  .voz-card li { padding: 6px 0 6px 22px; position: relative; }
+  .voz-card li::before { content: '•'; position: absolute; left: 4px; color: var(--ouro); }
+  .frase-exemplo {
+    background: var(--carvao); border-left: 3px solid var(--ouro); border-radius: 0 10px 10px 0;
+    padding: 14px 18px; margin-top: 10px; font-size: 0.85rem; color: var(--marfim); font-weight: 400;
+  }
+
+  /* ===== FOOTER ===== */
+  .footer { text-align: center; padding: 56px 32px 36px; border-top: 1px solid var(--borda-suave); margin-top: 72px; }
+  .footer-brand { font-family: var(--playfair); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--laranja-ads); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .container { padding: 0 16px; }
+    .sec { padding: 64px 0 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<!-- CAPA -->
+<div class="capa">
+  <img class="logo-capa" src="logo-propostas/logo-proposta-01-horizontal.png" alt="Logo Rei dos Importados">
+  <div class="capa-tag">Brandbook Oficial &middot; 2026</div>
+  <h1>A identidade de quem<br><span>reina</span> na feira</h1>
+  <div class="capa-linha"></div>
+  <p>O guia completo da marca Rei dos Importados: logo, cores, tipografia, linguagem visual e tom de voz. Tudo que entra com o nome da loja segue o que est&aacute; aqui.</p>
+</div>
+
+<div class="divisor"></div>
+
+<div class="container">
+
+  <!-- 01 A MARCA -->
+  <div class="sec">
+    <div class="sec-num">01 &middot; A Marca</div>
+    <div class="sec-title">Manifesto</div>
+    <p class="sec-sub">Antes da cor e da fonte, o que a marca acredita.</p>
+
+    <div class="manifesto">
+      <p>Celular bom n&atilde;o precisa custar caro.<br>
+      Na Feira de Barreiras, tem uma loja onde o pre&ccedil;o de importado vem com cara, nome e endere&ccedil;o: o aparelho &eacute; testado na sua frente, o brinde vai junto e, se precisar, a assist&ecirc;ncia &eacute; no mesmo balc&atilde;o.<br>
+      <strong>REI DOS IMPORTADOS &mdash; O MELHOR PRE&Ccedil;O, COM A SEGURAN&Ccedil;A DE QUEM TEM LOJA.</strong></p>
+    </div>
+
+    <div class="essencia-grid">
+      <div class="essencia"><h4>Ess&ecirc;ncia</h4><p>Pre&ccedil;o de importado com seguran&ccedil;a de loja f&iacute;sica.</p></div>
+      <div class="essencia"><h4>Promessa</h4><p>O melhor pre&ccedil;o de Barreiras em celulares e importados &mdash; testado, com garantia e assist&ecirc;ncia no mesmo lugar.</p></div>
+      <div class="essencia"><h4>Personalidade</h4><p>O parceiro da feira: direto, confi&aacute;vel, fala a l&iacute;ngua do povo e cumpre o que promete.</p></div>
+    </div>
+  </div>
+
+  <!-- 02 LOGO -->
+  <div class="sec">
+    <div class="sec-num">02 &middot; Logo</div>
+    <div class="sec-title">A coroa, redesenhada</div>
+    <p class="sec-sub">A marca mant&eacute;m a coroa que a cidade j&aacute; conhece, agora em dourado fosco &mdash; ouro de coroa, sem brilho espelhado &mdash; e sem os excessos da vers&atilde;o antiga: telefone, endere&ccedil;o e nome do propriet&aacute;rio saem da logo e v&atilde;o para a bio e os materiais.</p>
+
+    <div class="logo-grid">
+      <div class="logo-card">
+        <span class="selo selo-antes">Antes</span><br>
+        <img class="logo-antes" src="../REFERENCIAS/logo-atual.jpg" alt="Logo antiga">
+        <h4>Logo antiga</h4>
+        <p>Coroa + nome + propriet&aacute;rio + telefone + endere&ccedil;o: um cart&atilde;o de visita, n&atilde;o uma logo. Tipografias misturadas e acabamento irregular.</p>
+      </div>
+      <div class="logo-card destaque-ouro">
+        <span class="selo selo-nova">Nova &middot; Principal</span><br>
+        <img src="logo-propostas/logo-proposta-01-horizontal.png" alt="Logo nova horizontal">
+        <h4>Vers&atilde;o principal</h4>
+        <p>Coroa em dourado fosco + wordmark em serif imperial branca. Para fachada, materiais largos e topo de artes.</p>
+      </div>
+      <div class="logo-card destaque-ouro">
+        <span class="selo selo-nova">Nova &middot; Empilhada</span><br>
+        <img src="logo-propostas/logo-proposta-02-empilhada.png" alt="Logo nova empilhada">
+        <h4>Vers&atilde;o empilhada</h4>
+        <p>Toda dourada, estilo monograma. Para etiquetas, posts quadrados, carimbo em artes e uniformes.</p>
+      </div>
+      <div class="logo-card destaque-ouro">
+        <span class="selo selo-nova">Nova &middot; S&iacute;mbolo</span><br>
+        <img src="logo-propostas/logo-proposta-03-simbolo-perfil.png" alt="Símbolo da marca">
+        <h4>S&iacute;mbolo</h4>
+        <p>S&oacute; a coroa no anel. Foto de perfil do Instagram e do WhatsApp, favicon e assinatura m&iacute;nima.</p>
+      </div>
+    </div>
+
+    <div class="regras-logo">
+      <div class="regra-col faz">
+        <h4 style="color:var(--ouro)">Sempre</h4>
+        <ul>
+          <li>Usar sobre fundo preto ou grafite escuro</li>
+          <li>Manter respiro de prote&ccedil;&atilde;o: no m&iacute;nimo a altura da coroa em volta da logo</li>
+          <li>Dourado fosco ou branco: s&atilde;o as duas &uacute;nicas cores da logo</li>
+          <li>S&iacute;mbolo sozinho quando o espa&ccedil;o for pequeno (perfil, favicon)</li>
+        </ul>
+      </div>
+      <div class="regra-col nao-faz">
+        <h4 style="color:#EF4444">Nunca</h4>
+        <ul>
+          <li>Adicionar telefone, endere&ccedil;o ou nomes dentro da logo</li>
+          <li>Aplicar brilho espelhado, sombra forte ou contorno</li>
+          <li>Usar sobre fundo claro, colorido ou foto polu&iacute;da sem camada escura</li>
+          <li>Esticar, inclinar, trocar a fonte ou recolorir</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 03 PALETA -->
+  <div class="sec">
+    <div class="sec-num">03 &middot; Cores</div>
+    <div class="sec-title">Paleta Oficial</div>
+    <p class="sec-sub">Preto de fundo, ouro fosco de realce, marfim para o texto. O dourado &eacute; tempero, n&atilde;o prato principal: quanto menos se usa, mais nobre fica.</p>
+
+    <div class="paleta-grid">
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#0A0A0A; border-bottom:1px solid #222;"><span class="pct">60%</span></div>
+        <div class="cor-info"><h4>Preto Trono</h4><p class="hex">#0A0A0A</p><p>Fundo principal de tudo: artes, capas, stories e fachada.</p></div>
+      </div>
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#161616;"><span class="pct">15%</span></div>
+        <div class="cor-info"><h4>Grafite</h4><p class="hex">#161616</p><p>Cart&otilde;es, blocos e segundo plano sobre o preto.</p></div>
+      </div>
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#C9A24B;"><span class="pct">10%</span></div>
+        <div class="cor-info"><h4 style="color:var(--ouro);">Ouro de Coroa</h4><p class="hex">#C9A24B</p><p>A cor da marca: coroa, detalhes, pre&ccedil;os em destaque e &iacute;cones. Sempre fosco.</p></div>
+      </div>
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#A8842F;"><span class="pct">5%</span></div>
+        <div class="cor-info"><h4>Ouro Profundo</h4><p class="hex">#A8842F</p><p>Sombras do dourado e degrad&ecirc;s discretos com o Ouro de Coroa.</p></div>
+      </div>
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#F5F1E8;"><span class="pct">8%</span></div>
+        <div class="cor-info"><h4>Marfim</h4><p class="hex">#F5F1E8</p><p>Texto sobre fundo escuro. Mais quente e nobre que o branco puro.</p></div>
+      </div>
+      <div class="cor-card">
+        <div class="cor-amostra" style="background:#8A8A8A;"><span class="pct">2%</span></div>
+        <div class="cor-info"><h4>Cinza Apoio</h4><p class="hex">#8A8A8A</p><p>Textos secund&aacute;rios e legendas discretas.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 04 TIPOGRAFIA -->
+  <div class="sec">
+    <div class="sec-num">04 &middot; Tipografia</div>
+    <div class="sec-title">As letras do rei</div>
+    <p class="sec-sub">Duas fam&iacute;lias, cada uma no seu trono: Cinzel imp&otilde;e, Inter explica.</p>
+
+    <div class="tipo-card">
+      <div class="tipo-rotulo">T&iacute;tulos &middot; Cinzel</div>
+      <div class="tipo-mostra-cinzel">Rei dos Importados</div>
+      <div class="tipo-abc">ABCDEFGHIJKLMNOPQRSTUVWXYZ &middot; 0123456789</div>
+      <p class="tipo-uso">Serif imperial, mesma linguagem da logo. Usar em t&iacute;tulos de artes, pre&ccedil;os de destaque e chamadas curtas &mdash; sempre em caixa alta ou capitaliza&ccedil;&atilde;o de t&iacute;tulo, nunca em textos longos.</p>
+    </div>
+
+    <div class="tipo-card">
+      <div class="tipo-rotulo">Textos &middot; Inter</div>
+      <div class="tipo-mostra-inter">Celular testado na sua frente, com kit de prote&ccedil;&atilde;o de brinde e assist&ecirc;ncia no mesmo balc&atilde;o.</div>
+      <div class="tipo-abc">abcdefghijklmnopqrstuvwxyz &middot; ABCDEFGHIJKLMNOPQRSTUVWXYZ &middot; 0123456789</div>
+      <p class="tipo-uso">Limpa e leg&iacute;vel em qualquer tamanho. Usar em legendas, descri&ccedil;&otilde;es, condi&ccedil;&otilde;es de pagamento e qualquer texto corrido.</p>
+    </div>
+
+    <div class="hierarquia">
+      <div class="hier-linha"><span class="hier-tag">T&iacute;tulo</span><span style="font-family:var(--cinzel); font-size:1.5rem; font-weight:600; letter-spacing:0.06em;">XIAOMI POCO C71</span></div>
+      <div class="hier-linha"><span class="hier-tag">Pre&ccedil;o</span><span style="font-family:var(--cinzel); font-size:1.7rem; font-weight:700; color:var(--ouro);">R$ 900</span><span style="font-size:0.8rem; color:var(--cinza); text-decoration:line-through;">R$ 1.050</span></div>
+      <div class="hier-linha"><span class="hier-tag">Apoio</span><span style="font-size:0.92rem; font-weight:600;">Com todas as prote&ccedil;&otilde;es de brinde</span></div>
+      <div class="hier-linha"><span class="hier-tag">Texto</span><span style="font-size:0.85rem; color:#BBB; font-weight:300;">Pel&iacute;cula, capa, carregador e cabo inclusos. Parcelamos no cart&atilde;o.</span></div>
+      <div class="hier-linha"><span class="hier-tag">Convite</span><span style="font-size:0.85rem; color:var(--ouro); font-weight:600;">Chama no WhatsApp e garanta o seu &#128071;</span></div>
+    </div>
+  </div>
+
+  <!-- 05 LINGUAGEM VISUAL -->
+  <div class="sec">
+    <div class="sec-num">05 &middot; Linguagem Visual</div>
+    <div class="sec-title">Como a marca aparece</div>
+    <p class="sec-sub">Regras de constru&ccedil;&atilde;o de toda foto, arte e v&iacute;deo da marca.</p>
+
+    <div class="ling-grid">
+      <div class="ling-card"><h4>Fundo escuro, sempre</h4><p>Toda arte nasce sobre Preto Trono ou Grafite. Foto clara recebe camada escura antes de receber texto.</p></div>
+      <div class="ling-card"><h4>Dourado fosco em 3D</h4><p>&Iacute;cones e objetos de apoio seguem o padr&atilde;o das capas de destaque: volume suave, ouro fosco, nunca espelhado.</p></div>
+      <div class="ling-card"><h4>Produto na m&atilde;o</h4><p>Celular ligado na m&atilde;o, som tocando, rel&oacute;gio no pulso. Caixa fechada na prateleira n&atilde;o entra no feed.</p></div>
+      <div class="ling-card"><h4>Pre&ccedil;o em R$, em ouro</h4><p>R$ 900 &mdash; nunca &ldquo;900$&rdquo;. O pre&ccedil;o &eacute; o her&oacute;i da arte: grande, em Cinzel, na cor Ouro de Coroa.</p></div>
+      <div class="ling-card"><h4>O brinde sempre vis&iacute;vel</h4><p>Kit pel&iacute;cula + capa + carregador + cabo aparece ao lado do aparelho em toda oferta.</p></div>
+      <div class="ling-card"><h4>Gente de verdade</h4><p>O Luiz, o balc&atilde;o, a feira, o cliente retirando aparelho. Rosto e loja f&iacute;sica s&atilde;o o maior ativo de confian&ccedil;a da marca.</p></div>
+    </div>
+  </div>
+
+  <!-- 06 UNIVERSO VISUAL -->
+  <div class="sec">
+    <div class="sec-num">06 &middot; Universo Visual</div>
+    <div class="sec-title">A marca em uso</div>
+    <p class="sec-sub">O sistema aplicado: capas de destaque em dourado fosco e o perfil do Instagram reestruturado.</p>
+
+    <div class="universo-strip">
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-celulares-thumb.jpg" alt="Celulares"></div><div class="uni-nome">Celulares</div></div>
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-promocoes-thumb.jpg" alt="Promo&ccedil;&otilde;es"></div><div class="uni-nome">Promo&ccedil;&otilde;es</div></div>
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-assistencia-thumb.jpg" alt="Assist&ecirc;ncia"></div><div class="uni-nome">Assist&ecirc;ncia</div></div>
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-encomendas-thumb.jpg" alt="Encomendas"></div><div class="uni-nome">Encomendas</div></div>
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-clientes-thumb.jpg" alt="Clientes"></div><div class="uni-nome">Clientes</div></div>
+      <div class="uni-item"><div class="uni-circ"><img src="../02-CONTEUDO/capas-destaques/capa-a-loja-thumb.jpg" alt="A Loja"></div><div class="uni-nome">A Loja</div></div>
+    </div>
+
+    <div class="mockup-box">
+      <img src="../02-CONTEUDO/mockup-perfil-novo-web.jpg" alt="Perfil novo do Instagram" loading="lazy">
+      <p>O perfil reestruturado: nome pesquis&aacute;vel, bio nova e os seis destaques com as capas da marca. Detalhes no <a href="../02-CONTEUDO/review-instagram.html" style="color:#7CB8FF;">Review do Instagram</a>.</p>
+    </div>
+  </div>
+
+  <!-- 07 TOM DE VOZ -->
+  <div class="sec">
+    <div class="sec-num">07 &middot; Tom de Voz</div>
+    <div class="sec-title">Como o rei fala</div>
+    <p class="sec-sub">Linguagem de resultado, direta e do povo &mdash; com a confian&ccedil;a de quem tem loja aberta na feira.</p>
+
+    <div class="voz-grid">
+      <div class="voz-card">
+        <h4>A marca &eacute;</h4>
+        <ul>
+          <li><strong>Direta:</strong> pre&ccedil;o, condi&ccedil;&atilde;o e convite em toda mensagem</li>
+          <li><strong>Pr&oacute;xima:</strong> fala como se fala na feira, sem formalidade</li>
+          <li><strong>Confi&aacute;vel:</strong> sempre lembra a loja f&iacute;sica, o teste na frente do cliente e a garantia</li>
+          <li><strong>Orgulhosa sem arrog&acirc;ncia:</strong> &eacute; o rei do pre&ccedil;o, n&atilde;o o rei da ostenta&ccedil;&atilde;o</li>
+        </ul>
+      </div>
+      <div class="voz-card">
+        <h4>A marca nunca</h4>
+        <ul>
+          <li>Grita em caixa alta o texto inteiro</li>
+          <li>Promete &ldquo;original lacrado de operadora&rdquo; ou o que n&atilde;o pode cumprir</li>
+          <li>Usa jarg&atilde;o t&eacute;cnico sem traduzir</li>
+          <li>Publica sem convite para o WhatsApp</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="voz-card" style="margin-top:20px;">
+      <h4>Frases no tom da marca</h4>
+      <div class="frase-exemplo">&ldquo;Celular novo na m&atilde;o hoje, pagando bem menos &mdash; e com kit de prote&ccedil;&atilde;o de brinde.&rdquo;</div>
+      <div class="frase-exemplo">&ldquo;Testado na sua frente, com garantia da loja. Deu qualquer coisa, &eacute; s&oacute; voltar no balc&atilde;o.&rdquo;</div>
+      <div class="frase-exemplo">&ldquo;N&atilde;o achou na loja? A gente traz do Paraguai pra voc&ecirc;.&rdquo;</div>
+      <div class="frase-exemplo">&ldquo;Chama no WhatsApp e garanta o seu &#128071;&rdquo;</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Brandbook &mdash; Rei dos Importados &mdash; Novembro/2026</div>
+</div>
+
+</body>
+</html>
