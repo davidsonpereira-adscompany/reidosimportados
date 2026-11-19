@@ -3,310 +3,680 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Diagnóstico do Instagram do Rei dos Importados e plano de reestruturação: nome, bio, destaques, posts fixados e padrão do feed.">
 <title>Review do Instagram &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --laranja: #FF5C00;
-    --preto: #0A0A0A;
-    --cinza-escuro: #1A1A1A;
+    --laranja-hover: #FF7A33;
+    --preto: #060606;
+    --cinza-escuro: #111;
+    --cinza-card: #141414;
+    --cinza-card-hover: #1A1A1A;
     --cinza-medio: #2A2A2A;
     --cinza-claro: #888;
-    --cinza-border: rgba(255,255,255,0.08);
-    --branco: #FFFFFF;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
     --verde: #22C55E;
     --vermelho: #EF4444;
-    --amarelo: #EAB308;
     --serif: 'Playfair Display', Georgia, serif;
     --sans: 'Inter', -apple-system, sans-serif;
   }
   *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--preto);
     color: var(--branco);
     font-family: var(--sans);
     font-size: 15px;
     line-height: 1.6;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 48px 32px;
     -webkit-font-smoothing: antialiased;
   }
-  @media (max-width: 600px) { body { padding: 32px 16px; } }
 
-  /* Back */
-  .back-bar { margin-bottom: 24px; }
-  .back-link {
-    display: inline-flex; align-items: center; gap: 8px;
-    color: var(--cinza-claro); text-decoration: none;
-    font-size: 0.8rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-    transition: color 0.2s;
+  /* ===== TOP BAR ===== */
+  .top-bar {
+    background: rgba(10,10,10,0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--cinza-border);
+    padding: 14px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  .back-link:hover { color: var(--laranja); }
-
-  /* Header */
-  .header { margin-bottom: 48px; padding-bottom: 32px; border-bottom: 1px solid var(--cinza-border); text-align: center; }
-  .header img { height: 72px; margin-bottom: 10px; }
-  .header-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--laranja); margin-bottom: 12px; }
-  .header h1 { font-family: var(--serif); font-size: 2.1rem; font-weight: 400; line-height: 1.2; margin-bottom: 8px; }
-  .header h1 em { font-style: italic; color: var(--laranja); }
-  .header-line { width: 60px; height: 2px; background: var(--laranja); margin: 16px auto; }
-  .header p { font-size: 0.88rem; color: var(--cinza-claro); font-weight: 300; max-width: 620px; margin: 0 auto; }
-  @media (max-width: 600px) { .header h1 { font-size: 1.6rem; } }
-
-  /* Section */
-  .section { margin-bottom: 48px; }
-  .section-tag { font-size: 10px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--laranja); margin-bottom: 10px; }
-  .section h2 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; margin-bottom: 8px; }
-  .section h2 em { font-style: italic; color: var(--laranja); }
-  .section .section-desc { font-size: 0.9rem; color: var(--cinza-claro); font-weight: 300; margin-bottom: 22px; max-width: 720px; }
-
-  /* Info strip */
-  .info-strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 24px; }
-  @media (max-width: 760px) { .info-strip { grid-template-columns: repeat(2, 1fr); } }
-  .info-box { background: var(--cinza-escuro); border: 1px solid var(--cinza-border); padding: 16px; text-align: center; }
-  .info-num { font-family: var(--serif); font-size: 1.5rem; color: var(--laranja); }
-  .info-lbl { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--cinza-claro); margin-top: 4px; }
-
-  /* Diagnostico table */
-  .diag { width: 100%; border-collapse: collapse; }
-  .diag th { background: var(--cinza-medio); padding: 10px 14px; text-align: left; font-size: 0.7rem; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: var(--cinza-claro); }
-  .diag td { padding: 12px 14px; border-bottom: 1px solid var(--cinza-border); font-size: 0.86rem; font-weight: 300; vertical-align: top; }
-  .diag td:first-child { font-weight: 500; width: 190px; }
-  @media (max-width: 680px) {
-    .diag thead { display: none; }
-    .diag td { display: block; width: 100% !important; border-bottom: none; padding: 4px 12px; }
-    .diag tr { display: block; border-bottom: 1px solid var(--cinza-border); padding: 12px 0; }
+  .top-bar-name {
+    font-family: var(--serif);
+    font-size: 0.95rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.8);
   }
-  .pill { display: inline-block; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 10px; border-radius: 20px; }
-  .pill-ok   { background: rgba(34,197,94,0.12);  color: var(--verde); }
-  .pill-warn { background: rgba(234,179,8,0.12);  color: var(--amarelo); }
-  .pill-bad  { background: rgba(239,68,68,0.12);  color: var(--vermelho); }
-
-  /* Bio card */
-  .bio-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-  @media (max-width: 760px) { .bio-wrap { grid-template-columns: 1fr; } }
-  .bio-card { background: var(--cinza-escuro); border: 1px solid var(--cinza-border); padding: 24px; }
-  .bio-card.proposta { border-color: rgba(255,92,0,0.45); }
-  .bio-card-tag { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 14px; }
-  .bio-card.atual .bio-card-tag { color: var(--cinza-claro); }
-  .bio-card.proposta .bio-card-tag { color: var(--laranja); }
-  .bio-line { font-size: 0.92rem; font-weight: 300; padding: 3px 0; white-space: pre-wrap; }
-  .bio-name { font-weight: 600; font-size: 0.95rem; margin-bottom: 8px; }
-  .bio-note { font-size: 0.78rem; color: var(--cinza-claro); font-weight: 300; margin-top: 14px; padding-top: 12px; border-top: 1px dashed var(--cinza-border); }
-  .copy-btn {
-    margin-top: 16px; display: inline-block; padding: 10px 22px;
-    font-family: var(--sans); font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-    background: var(--laranja); color: var(--preto); border: none; cursor: pointer; transition: opacity 0.2s;
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    text-decoration: none;
+    border: 1px solid rgba(255,92,0,0.25);
+    padding: 8px 18px;
+    border-radius: 20px;
+    transition: all 0.3s;
   }
-  .copy-btn:hover { opacity: 0.85; }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
 
-  /* Destaques — capas */
-  .destaques-row { display: flex; gap: 18px; flex-wrap: wrap; justify-content: center; margin: 24px 0 10px; }
-  .destaque-item { text-align: center; width: 92px; }
-  .destaque-item a { text-decoration: none; color: inherit; display: block; }
+  /* ===== HERO ===== */
+  .hero {
+    padding: 80px 32px 56px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%);
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px; left: 50%;
+    transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(255,92,0,0.06) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-tag {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 20px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 5vw, 2.8rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p {
+    font-size: 0.95rem;
+    color: var(--cinza-claro);
+    font-weight: 300;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ===== CONTAINER / SECTION ===== */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 56px 0 24px; }
+  .section-header { text-align: center; margin-bottom: 40px; }
+  .section-tag {
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .divider {
+    width: 100%; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255,92,0,0.15), transparent);
+    margin: 32px 0 0;
+  }
+
+  /* ===== RAIO-X NUMEROS ===== */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+  }
+  @media (max-width: 760px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+  .stat-box {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px 16px;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    color: var(--laranja);
+    line-height: 1.1;
+  }
+  .stat-label {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--cinza-claro);
+    margin-top: 8px;
+  }
+
+  .perfil-atual {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+    margin-top: 20px;
+  }
+  .perfil-atual h4 {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    margin-bottom: 14px;
+  }
+  .perfil-atual p { font-size: 0.88rem; color: #BBB; font-weight: 300; margin-bottom: 6px; }
+  .perfil-atual strong { color: var(--branco); font-weight: 600; }
+
+  /* ===== DIAGNOSTICO ===== */
+  .diag-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .diag-grid { grid-template-columns: 1fr; } }
+  .diag-col {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .diag-col.pontos-fortes { border-top: 3px solid var(--verde); }
+  .diag-col.pontos-corrigir { border-top: 3px solid var(--vermelho); }
+  .diag-col h3 {
+    font-family: var(--serif);
+    font-size: 1.1rem;
+    font-weight: 400;
+    margin-bottom: 18px;
+  }
+  .diag-col ul { list-style: none; }
+  .diag-col li {
+    font-size: 0.86rem;
+    color: #BBB;
+    font-weight: 300;
+    padding: 9px 0 9px 26px;
+    position: relative;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .diag-col li:last-child { border-bottom: none; }
+  .diag-col li strong { color: var(--branco); font-weight: 600; }
+  .pontos-fortes li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+  .pontos-corrigir li::before { content: '✕'; position: absolute; left: 0; color: var(--vermelho); font-weight: 700; }
+
+  /* ===== ANTES / DEPOIS BIO ===== */
+  .bio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 760px) { .bio-grid { grid-template-columns: 1fr; } }
+  .bio-card {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .bio-card .rotulo {
+    display: inline-block;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+  }
+  .rotulo-antes { background: rgba(239,68,68,0.1); color: var(--vermelho); border: 1px solid rgba(239,68,68,0.25); }
+  .rotulo-depois { background: rgba(34,197,94,0.1); color: var(--verde); border: 1px solid rgba(34,197,94,0.25); }
+  .bio-mock {
+    background: #0D0D0D;
+    border: 1px solid var(--cinza-medio);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 0.85rem;
+    line-height: 1.75;
+    color: #CCC;
+  }
+  .bio-mock .nome-perfil { font-weight: 700; color: var(--branco); font-size: 0.92rem; }
+  .bio-mock .user { color: var(--cinza-claro); font-size: 0.78rem; margin-bottom: 10px; }
+  .bio-mock .link { color: #7CB8FF; }
+  .bio-obs { font-size: 0.78rem; color: var(--cinza-claro); font-weight: 300; margin-top: 14px; line-height: 1.6; }
+
+  /* ===== DESTAQUES ===== */
+  .destaques-wrap {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 28px;
+  }
+  .destaques-row {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 20px 0 8px;
+  }
+  .destaque-item { text-align: center; width: 84px; }
   .destaque-circ {
-    width: 84px; height: 84px; border-radius: 50%;
-    overflow: hidden; margin: 0 auto 8px;
-    border: 2px solid var(--cinza-medio);
-    box-shadow: 0 0 0 3px var(--preto), 0 0 0 4px rgba(255,92,0,0.35);
+    width: 70px; height: 70px;
+    border-radius: 50%;
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    background: linear-gradient(135deg, #1C1C1C, #0E0E0E);
+    border: 2px solid var(--laranja);
+    overflow: hidden;
   }
   .destaque-circ img { width: 100%; height: 100%; object-fit: cover; display: block; }
-  .destaque-nome { font-size: 0.74rem; font-weight: 500; color: rgba(255,255,255,0.85); }
+  .destaque-item a { text-decoration: none; color: inherit; display: block; }
+  .btn-baixar {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #0A0A0C !important;
+    background: var(--laranja);
+    padding: 6px 14px;
+    border-radius: 14px;
+    transition: opacity 0.2s;
+  }
+  .btn-baixar:hover { opacity: 0.85; }
+  .destaque-nome {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #CCC;
+  }
+  .destaques-wrap > p { font-size: 0.85rem; color: #BBB; font-weight: 300; }
 
-  /* Destaques */
-  .hl-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  @media (max-width: 860px) { .hl-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 560px) { .hl-grid { grid-template-columns: 1fr; } }
-  .hl-card { background: var(--cinza-escuro); border: 1px solid var(--cinza-border); padding: 20px; }
-  .hl-emoji { font-size: 1.6rem; margin-bottom: 8px; }
-  .hl-title { font-weight: 600; font-size: 0.95rem; margin-bottom: 6px; letter-spacing: 0.04em; }
-  .hl-desc { font-size: 0.82rem; color: var(--cinza-claro); font-weight: 300; }
+  /* ===== FIXADOS ===== */
+  .fixados-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 760px) { .fixados-grid { grid-template-columns: 1fr; } }
+  .fixado-card {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px;
+    position: relative;
+  }
+  .fixado-num {
+    position: absolute;
+    top: -14px; left: 20px;
+    width: 28px; height: 28px;
+    background: var(--laranja);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .fixado-card h4 { font-family: var(--serif); font-size: 1rem; font-weight: 400; margin: 8px 0 10px; color: var(--laranja); }
+  .fixado-card p { font-size: 0.82rem; color: #BBB; font-weight: 300; line-height: 1.6; }
 
-  /* Regras do feed */
-  .rule { display: flex; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--cinza-border); }
-  .rule:last-child { border-bottom: none; }
-  .rule-num { font-family: var(--serif); font-size: 1.3rem; color: var(--laranja); flex-shrink: 0; width: 36px; }
-  .rule-body strong { display: block; font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
-  .rule-body p { font-size: 0.86rem; color: var(--cinza-claro); font-weight: 300; }
-  .rule-body p b { color: var(--branco); font-weight: 500; }
+  /* ===== FEED REGRAS ===== */
+  .regras-lista { display: grid; gap: 14px; }
+  .regra {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-left: 3px solid var(--laranja);
+    border-radius: 0 12px 12px 0;
+    padding: 20px 24px;
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  .regra-icone { font-size: 1.3rem; flex-shrink: 0; }
+  .regra h4 { font-size: 0.92rem; font-weight: 600; margin-bottom: 4px; }
+  .regra p { font-size: 0.83rem; color: #AAA; font-weight: 300; line-height: 1.6; }
 
-  /* Checklist */
-  .check { display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px; background: var(--cinza-escuro); border: 1px solid var(--cinza-border); margin-bottom: 8px; }
-  .check-box { width: 18px; height: 18px; border: 2px solid var(--laranja); flex-shrink: 0; margin-top: 3px; }
-  .check-text { font-size: 0.88rem; font-weight: 300; }
-  .check-text b { font-weight: 600; }
+  /* ===== CHECKLIST ===== */
+  .check-lista { display: grid; gap: 10px; }
+  .check-item {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 12px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: 0.87rem;
+    color: #CCC;
+  }
+  .check-fase {
+    flex-shrink: 0;
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--laranja);
+    background: rgba(255,92,0,0.08);
+    border: 1px solid rgba(255,92,0,0.2);
+    padding: 4px 10px;
+    border-radius: 10px;
+  }
 
-  /* Divider */
-  .divider { width: 100%; height: 1px; background: linear-gradient(90deg, var(--laranja), rgba(255,92,0,0.05)); margin: 40px 0; }
+  /* ===== PRINT ===== */
+  .print-wrap {
+    background: var(--cinza-card);
+    border: 1px solid var(--cinza-border);
+    border-radius: 14px;
+    padding: 24px;
+    text-align: center;
+  }
+  .print-wrap img {
+    max-width: 100%;
+    max-height: 720px;
+    border-radius: 10px;
+    border: 1px solid var(--cinza-medio);
+  }
+  .print-wrap p { font-size: 0.75rem; color: var(--cinza-claro); margin-top: 12px; font-weight: 300; }
 
-  /* Footer */
-  .footer { text-align: center; padding: 24px 0; border-top: 1px solid var(--cinza-border); margin-top: 24px; }
-  .footer p { font-family: var(--serif); font-size: 0.95rem; }
-  .footer p em { font-style: italic; color: var(--laranja); }
-  .footer .sub { font-family: var(--sans); font-size: 0.75rem; color: var(--cinza-claro); margin-top: 4px; }
+  /* ===== FOOTER ===== */
+  .footer {
+    text-align: center;
+    padding: 48px 32px 32px;
+    border-top: 1px solid var(--cinza-border);
+    margin-top: 56px;
+  }
+  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--laranja); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .hero { padding: 56px 20px 40px; }
+    .container { padding: 0 16px; }
+    .section { padding: 40px 0 20px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="back-bar">
-  <a href="../index.html" class="back-link">&larr; Voltar para a Central de Documentos</a>
+<!-- TOP BAR -->
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
 </div>
 
-<div class="header">
-  <img src="../ads-logo.png" alt="ADS Company">
-  <div class="header-tag">Rei dos Importados &mdash; @reidosimportados_brrs</div>
-  <h1>Review do Instagram &amp; <em>Reestrutura&ccedil;&atilde;o</em></h1>
-  <div class="header-line"></div>
-  <p>Diagn&oacute;stico do perfil atual e proposta completa de reestrutura&ccedil;&atilde;o: nome, bio, destaques e padr&atilde;o de feed &mdash; tudo pronto para aplicar.</p>
-</div>
-
-<!-- 01 RAIO-X -->
-<div class="section">
-  <div class="section-tag">01 &mdash; Raio-X do Perfil</div>
-  <h2>Como o perfil est&aacute; <em>hoje</em></h2>
-  <p class="section-desc">Fotografia do perfil em 19/11/2026. A base &eacute; boa: p&uacute;blico local real e canal de venda direto no WhatsApp. O que falta &eacute; apresenta&ccedil;&atilde;o &agrave; altura da loja.</p>
-
-  <div class="info-strip">
-    <div class="info-box"><div class="info-num">1.528</div><div class="info-lbl">Seguidores</div></div>
-    <div class="info-box"><div class="info-num">15</div><div class="info-lbl">Publica&ccedil;&otilde;es</div></div>
-    <div class="info-box"><div class="info-num">0</div><div class="info-lbl">Destaques</div></div>
-    <div class="info-box"><div class="info-num">596</div><div class="info-lbl">Seguindo</div></div>
-  </div>
-
-  <table class="diag">
-    <thead><tr><th>Item</th><th>Situa&ccedil;&atilde;o</th><th>An&aacute;lise</th></tr></thead>
-    <tbody>
-      <tr><td>Link do WhatsApp</td><td><span class="pill pill-ok">Bom</span></td><td>wa.me direto na bio &mdash; o caminho de venda j&aacute; existe. Vamos aproveit&aacute;-lo em tudo.</td></tr>
-      <tr><td>Base de seguidores</td><td><span class="pill pill-ok">Bom</span></td><td>1.528 seguidores locais com apenas 15 posts: a cidade j&aacute; conhece a loja. H&aacute; demanda represada.</td></tr>
-      <tr><td>Categoria do perfil</td><td><span class="pill pill-ok">Bom</span></td><td>&ldquo;Compras e varejo&rdquo; est&aacute; correta.</td></tr>
-      <tr><td>Bio</td><td><span class="pill pill-warn">Ajustar</span></td><td>Tudo em caixa alta, texto cortado no &ldquo;...mais&rdquo; e o endere&ccedil;o s&oacute; aparece no final. Quem chega n&atilde;o entende em 3 segundos o que a loja oferece.</td></tr>
-      <tr><td>Destaques</td><td><span class="pill pill-bad">Criar</span></td><td>N&atilde;o existem. O cliente novo n&atilde;o encontra pre&ccedil;os, endere&ccedil;o, hor&aacute;rio nem provas de clientes satisfeitos.</td></tr>
-      <tr><td>Padr&atilde;o do feed</td><td><span class="pill pill-bad">Criar</span></td><td>Fotos de caixas na prateleira, sem identidade e sem pre&ccedil;o padronizado (aparece &ldquo;900$&rdquo; em vez de &ldquo;R$ 900&rdquo;). Produto bom mal apresentado vende menos.</td></tr>
-      <tr><td>Assist&ecirc;ncia t&eacute;cnica</td><td><span class="pill pill-bad">Mostrar</span></td><td>Metade do neg&oacute;cio est&aacute; quase invis&iacute;vel no feed. Assist&ecirc;ncia &eacute; o que traz o cliente de volta todo m&ecirc;s.</td></tr>
-      <tr><td>Encomendas do Paraguai</td><td><span class="pill pill-warn">Destacar</span></td><td>&Eacute; o maior diferencial da loja e hoje &eacute; s&oacute; uma linha escondida na bio.</td></tr>
-    </tbody>
-  </table>
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Instagram &middot; Diagn&oacute;stico e Reestrutura&ccedil;&atilde;o</div>
+  <h1>Review do <em>Instagram</em> Rei dos Importados</h1>
+  <div class="hero-line"></div>
+  <p>An&aacute;lise completa do perfil atual do Rei dos Importados e o plano de reestrutura&ccedil;&atilde;o para transformar o Instagram em uma vitrine que gera conversas no WhatsApp e clientes na loja todos os dias.</p>
 </div>
 
 <div class="divider"></div>
 
-<!-- 02 NOME E BIO -->
-<div class="section">
-  <div class="section-tag">02 &mdash; Nome e Bio</div>
-  <h2>A nova <em>porta de entrada</em></h2>
-  <p class="section-desc">O campo &ldquo;nome&rdquo; do perfil &eacute; o que aparece na busca do Instagram. Quem procurar &ldquo;celular Barreiras&rdquo; precisa encontrar a loja. A bio nova responde em 3 segundos: o que &eacute;, por que confiar e o que fazer.</p>
-
-  <div class="bio-wrap">
-    <div class="bio-card atual">
-      <div class="bio-card-tag">Como est&aacute; hoje</div>
-      <div class="bio-name">Rei dos Importados &#128081;</div>
-      <div class="bio-line">&#128081; LOJA DE ACESS&Oacute;RIOS E ASSIST&Ecirc;NCIA T&Eacute;CNICA</div>
-      <div class="bio-line">TEMOS O MELHOR PRE&Ccedil;O P/ CELULARES</div>
-      <div class="bio-line">iOS &amp; Android</div>
-      <div class="bio-line">ACEITAMOS ENCOMENDAS &#127477;&#127486;</div>
-      <div class="bio-line">&#128205;FEIRA LIVRE - BARREIRAS</div>
-      <div class="bio-note">Tudo em caixa alta cansa a leitura, o texto aparece cortado no celular e o diferencial das encomendas fica perdido no meio.</div>
+<!-- RAIO-X -->
+<div class="container">
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Fotografia do momento</div>
+      <div class="section-title">O perfil <em>hoje</em></div>
     </div>
 
-    <div class="bio-card proposta">
-      <div class="bio-card-tag">Proposta nova</div>
-      <div class="bio-name">Rei dos Importados &#128081; Celulares e Assist&ecirc;ncia &middot; Barreiras</div>
-      <div id="bio-nova">
-        <div class="bio-line">&#128241; Melhor pre&ccedil;o em celulares e importados</div>
-        <div class="bio-line">&#128295; Assist&ecirc;ncia iOS &amp; Android</div>
-        <div class="bio-line">&#128230; Encomendas do Paraguai</div>
-        <div class="bio-line">&#128205; Feira Livre &ndash; Barreiras-BA</div>
-        <div class="bio-line">&#128071; Chama no WhatsApp</div>
+    <div class="stats-grid">
+      <div class="stat-box"><div class="stat-num">15</div><div class="stat-label">Publica&ccedil;&otilde;es</div></div>
+      <div class="stat-box"><div class="stat-num">1.528</div><div class="stat-label">Seguidores</div></div>
+      <div class="stat-box"><div class="stat-num">0</div><div class="stat-label">Destaques</div></div>
+      <div class="stat-box"><div class="stat-num">4+</div><div class="stat-label">Estilos visuais misturados</div></div>
+    </div>
+
+    <div class="perfil-atual">
+      <h4>Dados do perfil (19/11/2026)</h4>
+      <p><strong>Usu&aacute;rio:</strong> @reidosimportados_brrs</p>
+      <p><strong>Nome exibido:</strong> Rei dos Importados &#128081;</p>
+      <p><strong>Bio:</strong> &ldquo;LOJA DE ACESS&Oacute;RIOS E ASSIST&Ecirc;NCIA T&Eacute;CNICA / TEMOS O MELHOR PRE&Ccedil;O P/ CELULARES / iOS &amp; Android / ACEITAMOS ENCOMENDAS &#127477;&#127486; / FEIRA LIVRE - BARREIRAS&rdquo; + link wa.me</p>
+      <p><strong>Destaques:</strong> nenhum criado</p>
+      <p><strong>Fixados no topo:</strong> nenhum post fixado &mdash; o espa&ccedil;o mais nobre do perfil est&aacute; vazio</p>
+    </div>
+  </div>
+
+  <!-- DIAGNOSTICO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Diagn&oacute;stico</div>
+      <div class="section-title">O que funciona e o que <em>trava</em> o perfil</div>
+    </div>
+
+    <div class="diag-grid">
+      <div class="diag-col pontos-fortes">
+        <h3>O que j&aacute; funciona</h3>
+        <ul>
+          <li><strong>1.528 seguidores com s&oacute; 15 posts</strong> &mdash; a cidade j&aacute; conhece a loja. Tem demanda represada esperando conte&uacute;do.</li>
+          <li><strong>Link do WhatsApp clic&aacute;vel na bio</strong> &mdash; o caminho da venda j&aacute; existe; falta mandar o cliente para ele em todo post.</li>
+          <li><strong>Pre&ccedil;o exposto nas artes de promo&ccedil;&atilde;o</strong> &mdash; como no an&uacute;ncio do Poco C71 com kit de brindes: responde a primeira pergunta de quem compara.</li>
+          <li><strong>Fotos reais da loja e dos produtos</strong> &mdash; fachada, balc&atilde;o e produto de verdade passam mais confian&ccedil;a que banco de imagens.</li>
+          <li><strong>Localiza&ccedil;&atilde;o clara</strong> &mdash; Feira Livre de Barreiras na bio e endere&ccedil;o completo na logo. Ponto que todo mundo da cidade conhece.</li>
+        </ul>
       </div>
-      <button class="copy-btn" onclick="copyBio(this)">Copiar bio nova</button>
-      <div class="bio-note"><strong style="color:var(--verde);">147 de 150 caracteres</strong> &mdash; dentro do limite do Instagram, j&aacute; contando emojis e quebras de linha. O link wa.me/5577999904140 vai no campo pr&oacute;prio de link e n&atilde;o entra na contagem. O campo &ldquo;nome&rdquo; passa a incluir &ldquo;Celulares e Assist&ecirc;ncia &middot; Barreiras&rdquo; para o perfil aparecer nas buscas da cidade.</div>
+
+      <div class="diag-col pontos-corrigir">
+        <h3>O que precisa mudar</h3>
+        <ul>
+          <li><strong>Nome n&atilde;o aparece na busca</strong> &mdash; quem procura &ldquo;celular Barreiras&rdquo; ou &ldquo;assist&ecirc;ncia t&eacute;cnica&rdquo; n&atilde;o encontra um perfil chamado s&oacute; &ldquo;Rei dos Importados&rdquo;.</li>
+          <li><strong>Bio toda em caixa alta e cortada</strong> &mdash; o texto some atr&aacute;s do &ldquo;...mais&rdquo; e o diferencial das encomendas do Paraguai fica escondido.</li>
+          <li><strong>Zero destaques</strong> &mdash; o cliente novo n&atilde;o encontra pre&ccedil;os, endere&ccedil;o, hor&aacute;rio nem provas de clientes satisfeitos.</li>
+          <li><strong>Nenhum post fixado</strong> &mdash; quem abre o perfil cai direto num feed sem ordem, sem cat&aacute;logo e sem apresenta&ccedil;&atilde;o.</li>
+          <li><strong>Pre&ccedil;o escrito como &ldquo;900$&rdquo;</strong> &mdash; fora do padr&atilde;o brasileiro. O correto &eacute; R$ 900; pre&ccedil;o claro passa seriedade.</li>
+          <li><strong>Feed com 4+ estilos misturados</strong> &mdash; arte amarela, foto crua de caixa na prateleira, logo e fachada convivem sem padr&atilde;o. O perfil parece de v&aacute;rias lojas.</li>
+          <li><strong>Assist&ecirc;ncia t&eacute;cnica quase invis&iacute;vel</strong> &mdash; metade do neg&oacute;cio n&atilde;o aparece no feed, e &eacute; o servi&ccedil;o que traz o cliente de volta todo m&ecirc;s.</li>
+          <li><strong>Mix de produtos sem hierarquia</strong> &mdash; moto el&eacute;trica, perfume e rel&oacute;gio dividem espa&ccedil;o igual com o carro-chefe: celulares.</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <!-- BIO ANTES E DEPOIS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 1</div>
+      <div class="section-title">Nome e bio: antes e <em>depois</em></div>
+    </div>
 
-<!-- 03 DESTAQUES -->
-<div class="section">
-  <div class="section-tag">03 &mdash; Destaques</div>
-  <h2>A vitrine fixa do <em>perfil</em></h2>
-  <p class="section-desc">Seis destaques com capas criadas sob medida em 3D minimalista: objeto branco fosco sobre fundo grafite, mesmo estilo em todas &mdash; sofisticado e no padr&atilde;o preto e branco da marca. Nenhuma capa leva texto: o nome entra no t&iacute;tulo do pr&oacute;prio destaque, como o Instagram exibe abaixo do c&iacute;rculo. &Eacute; onde o cliente novo tira as d&uacute;vidas sozinho, a qualquer hora.</p>
+    <div class="bio-grid">
+      <div class="bio-card">
+        <span class="rotulo rotulo-antes">Como est&aacute;</span>
+        <div class="bio-mock">
+          <div class="nome-perfil">Rei dos Importados &#128081;</div>
+          <div class="user">@reidosimportados_brrs</div>
+          &#128081; LOJA DE ACESS&Oacute;RIOS E ASSIST&Ecirc;NCIA T&Eacute;CNICA<br>
+          TEMOS O MELHOR PRE&Ccedil;O P/ CELULARES<br>
+          iOS &amp; Android<br>
+          ACEITAMOS... mais
+        </div>
+        <p class="bio-obs">O nome n&atilde;o tem as palavras que o cliente busca (&ldquo;celular&rdquo;, &ldquo;Barreiras&rdquo;). A bio em caixa alta cansa, aparece cortada no celular e esconde o maior diferencial: as encomendas do Paraguai.</p>
+      </div>
 
-  <div class="destaques-row">
-    <div class="destaque-item"><a href="capas-destaques/capa-celulares.png"><div class="destaque-circ"><img src="capas-destaques/capa-celulares-thumb.jpg" alt="Capa Celulares" width="84" height="84" loading="lazy"></div><div class="destaque-nome">Celulares</div></a></div>
-    <div class="destaque-item"><a href="capas-destaques/capa-promocoes.png"><div class="destaque-circ"><img src="capas-destaques/capa-promocoes-thumb.jpg" alt="Capa Promo&ccedil;&otilde;es" width="84" height="84" loading="lazy"></div><div class="destaque-nome">Promo&ccedil;&otilde;es</div></a></div>
-    <div class="destaque-item"><a href="capas-destaques/capa-assistencia.png"><div class="destaque-circ"><img src="capas-destaques/capa-assistencia-thumb.jpg" alt="Capa Assist&ecirc;ncia" width="84" height="84" loading="lazy"></div><div class="destaque-nome">Assist&ecirc;ncia</div></a></div>
-    <div class="destaque-item"><a href="capas-destaques/capa-encomendas.png"><div class="destaque-circ"><img src="capas-destaques/capa-encomendas-thumb.jpg" alt="Capa Encomendas" width="84" height="84" loading="lazy"></div><div class="destaque-nome">Encomendas</div></a></div>
-    <div class="destaque-item"><a href="capas-destaques/capa-clientes.png"><div class="destaque-circ"><img src="capas-destaques/capa-clientes-thumb.jpg" alt="Capa Clientes" width="84" height="84" loading="lazy"></div><div class="destaque-nome">Clientes</div></a></div>
-    <div class="destaque-item"><a href="capas-destaques/capa-a-loja.png"><div class="destaque-circ"><img src="capas-destaques/capa-a-loja-thumb.jpg" alt="Capa A Loja" width="84" height="84" loading="lazy"></div><div class="destaque-nome">A Loja</div></a></div>
+      <div class="bio-card">
+        <span class="rotulo rotulo-depois">Proposta</span>
+        <div class="bio-mock">
+          <div class="nome-perfil">Rei dos Importados &#128081; Celulares e Assist&ecirc;ncia &middot; Barreiras</div>
+          <div class="user">@reidosimportados_brrs <span style="color:#666">(mant&eacute;m o mesmo)</span></div>
+          &#128241; Melhor pre&ccedil;o em celulares e importados<br>
+          &#128295; Assist&ecirc;ncia iOS &amp; Android<br>
+          &#128230; Encomendas do Paraguai<br>
+          &#128205; Feira Livre &ndash; Barreiras-BA<br>
+          &#128071; Chama no WhatsApp<br>
+          <span class="link">wa.me/5577999904140</span>
+        </div>
+        <p class="bio-obs"><strong style="color:var(--verde);">147 de 150 caracteres</strong> &mdash; dentro do limite do Instagram, j&aacute; contando emojis e quebras de linha. O link do WhatsApp vai no campo pr&oacute;prio de link e n&atilde;o entra na contagem. O campo &ldquo;nome&rdquo; passa a conter as palavras que o cliente digita na busca; a bio diz o que a loja vende, o diferencial, onde fica e o que fazer.</p>
+      </div>
+    </div>
   </div>
-  <p style="font-size:0.78rem; color:var(--cinza-claro); font-weight:300; text-align:center; margin-bottom:24px;">Toque em qualquer capa para abrir o arquivo em alta resolu&ccedil;&atilde;o, pronto para subir no Instagram.</p>
 
-  <div class="hl-grid">
-    <div class="hl-card"><div class="hl-emoji">&#128241;</div><div class="hl-title">CELULARES</div><div class="hl-desc">Modelos dispon&iacute;veis na loja, sempre com pre&ccedil;o em R$ e condi&ccedil;&atilde;o de pagamento.</div></div>
-    <div class="hl-card"><div class="hl-emoji">&#128293;</div><div class="hl-title">PROMO&Ccedil;&Otilde;ES</div><div class="hl-desc">Ofertas da semana e kits com brinde (pel&iacute;cula, capa, carregador e cabo).</div></div>
-    <div class="hl-card"><div class="hl-emoji">&#128295;</div><div class="hl-title">ASSIST&Ecirc;NCIA</div><div class="hl-desc">Antes e depois de consertos, telas trocadas na hora e or&ccedil;amento pelo WhatsApp.</div></div>
-    <div class="hl-card"><div class="hl-emoji">&#128230;</div><div class="hl-title">ENCOMENDAS</div><div class="hl-desc">Como funciona o pedido do Paraguai: pediu, chegou, cliente retirando na loja.</div></div>
-    <div class="hl-card"><div class="hl-emoji">&#11088;</div><div class="hl-title">CLIENTES</div><div class="hl-desc">Prints de agradecimento no WhatsApp e clientes retirando aparelho na loja.</div></div>
-    <div class="hl-card"><div class="hl-emoji">&#127970;</div><div class="hl-title">A LOJA</div><div class="hl-desc">Fachada, endere&ccedil;o na Feira Livre, hor&aacute;rio de funcionamento e como chegar.</div></div>
+  <!-- DESTAQUES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 2</div>
+      <div class="section-title">Destaques <em>padronizados</em></div>
+    </div>
+
+    <div class="destaques-wrap">
+      <p>Capas criadas sob medida para o Rei dos Importados em 3D minimalista: objeto branco fosco sobre fundo grafite, mesmo estilo em todas &mdash; no padr&atilde;o preto e branco da marca. Nenhuma capa leva texto: o nome entra no t&iacute;tulo do pr&oacute;prio destaque, como o Instagram exibe abaixo do c&iacute;rculo. Ordem pensada no caminho do cliente: ver os aparelhos &rarr; ver oferta &rarr; resolver conserto &rarr; encomendar &rarr; confiar &rarr; achar a loja.</p>
+      <div class="destaques-row">
+        <div class="destaque-item"><a href="capas-destaques/capa-celulares.png" download="capa-celulares.png"><div class="destaque-circ"><img src="capas-destaques/capa-celulares-thumb.jpg" alt="Capa Celulares" width="70" height="70" loading="lazy"></div><div class="destaque-nome">Celulares</div></a><a class="btn-baixar" href="capas-destaques/capa-celulares.png" download="capa-celulares.png">Baixar</a></div>
+        <div class="destaque-item"><a href="capas-destaques/capa-promocoes.png" download="capa-promocoes.png"><div class="destaque-circ"><img src="capas-destaques/capa-promocoes-thumb.jpg" alt="Capa Promo&ccedil;&otilde;es" width="70" height="70" loading="lazy"></div><div class="destaque-nome">Promo&ccedil;&otilde;es</div></a><a class="btn-baixar" href="capas-destaques/capa-promocoes.png" download="capa-promocoes.png">Baixar</a></div>
+        <div class="destaque-item"><a href="capas-destaques/capa-assistencia.png" download="capa-assistencia.png"><div class="destaque-circ"><img src="capas-destaques/capa-assistencia-thumb.jpg" alt="Capa Assist&ecirc;ncia" width="70" height="70" loading="lazy"></div><div class="destaque-nome">Assist&ecirc;ncia</div></a><a class="btn-baixar" href="capas-destaques/capa-assistencia.png" download="capa-assistencia.png">Baixar</a></div>
+        <div class="destaque-item"><a href="capas-destaques/capa-encomendas.png" download="capa-encomendas.png"><div class="destaque-circ"><img src="capas-destaques/capa-encomendas-thumb.jpg" alt="Capa Encomendas" width="70" height="70" loading="lazy"></div><div class="destaque-nome">Encomendas</div></a><a class="btn-baixar" href="capas-destaques/capa-encomendas.png" download="capa-encomendas.png">Baixar</a></div>
+        <div class="destaque-item"><a href="capas-destaques/capa-clientes.png" download="capa-clientes.png"><div class="destaque-circ"><img src="capas-destaques/capa-clientes-thumb.jpg" alt="Capa Clientes" width="70" height="70" loading="lazy"></div><div class="destaque-nome">Clientes</div></a><a class="btn-baixar" href="capas-destaques/capa-clientes.png" download="capa-clientes.png">Baixar</a></div>
+        <div class="destaque-item"><a href="capas-destaques/capa-a-loja.png" download="capa-a-loja.png"><div class="destaque-circ"><img src="capas-destaques/capa-a-loja-thumb.jpg" alt="Capa A Loja" width="70" height="70" loading="lazy"></div><div class="destaque-nome">A Loja</div></a><a class="btn-baixar" href="capas-destaques/capa-a-loja.png" download="capa-a-loja.png">Baixar</a></div>
+      </div>
+      <p style="margin-top:14px; font-size:0.78rem; color:var(--cinza-claro);">Toque em &ldquo;Baixar&rdquo; para salvar a capa no celular em alta resolu&ccedil;&atilde;o e j&aacute; aplicar no destaque do Instagram. Como hoje n&atilde;o existe nenhum destaque, o primeiro passo &eacute; gravar os stories-base de cada tema (a ADS envia o roteiro) e salv&aacute;-los nos destaques com essas capas.</p>
+    </div>
   </div>
-</div>
 
-<div class="divider"></div>
+  <!-- FIXADOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 3</div>
+      <div class="section-title">Os 3 posts <em>fixados</em> certos</div>
+    </div>
 
-<!-- 04 PADRAO DE FEED -->
-<div class="section">
-  <div class="section-tag">04 &mdash; Padr&atilde;o de Feed</div>
-  <h2>As regras do <em>novo feed</em></h2>
-  <p class="section-desc">Sem depender de designer: s&atilde;o regras simples de produ&ccedil;&atilde;o que o pr&oacute;prio cliente consegue seguir com o celular na m&atilde;o.</p>
+    <div class="fixados-grid">
+      <div class="fixado-card">
+        <div class="fixado-num">1</div>
+        <h4>Quem somos (v&iacute;deo)</h4>
+        <p>V&iacute;deo curto de at&eacute; 30 segundos do Lu&iacute;s na frente da loja, na Feira: quem &eacute;, o que vende e onde fica. Gente de verdade falando olho no olho derruba o medo de golpe &mdash; nenhuma loja online tem isso. A ADS entrega o roteiro pronto.</p>
+      </div>
+      <div class="fixado-card">
+        <div class="fixado-num">2</div>
+        <h4>Cat&aacute;logo com pre&ccedil;os</h4>
+        <p>Carrossel com os celulares mais pedidos e o pre&ccedil;o em R$ de cada um, sempre com o kit de brinde em cima do balc&atilde;o. &Eacute; o post que o cliente salva e manda para a fam&iacute;lia.</p>
+      </div>
+      <div class="fixado-card">
+        <div class="fixado-num">3</div>
+        <h4>Prova de clientes</h4>
+        <p>Antes e depois de um conserto real + cliente retirando aparelho na loja + prints de agradecimento no WhatsApp. Quem v&ecirc; entende: aqui se compra, conserta e resolve.</p>
+      </div>
+    </div>
+  </div>
 
-  <div class="rule"><div class="rule-num">1</div><div class="rule-body"><strong>Produto na m&atilde;o, n&atilde;o na prateleira</strong><p>Foto e v&iacute;deo sempre com o produto <b>sendo usado ou segurado</b>: celular ligado na m&atilde;o, caixa de som tocando, rel&oacute;gio no pulso. Caixa fechada na prateleira n&atilde;o gera desejo.</p></div></div>
-  <div class="rule"><div class="rule-num">2</div><div class="rule-body"><strong>Pre&ccedil;o sempre em R$</strong><p>Padr&atilde;o &uacute;nico: <b>R$ 900</b> (nunca &ldquo;900$&rdquo;). Pre&ccedil;o claro passa seriedade e evita confus&atilde;o nos an&uacute;ncios.</p></div></div>
-  <div class="rule"><div class="rule-num">3</div><div class="rule-body"><strong>Celular e assist&ecirc;ncia s&atilde;o o carro-chefe</strong><p>A cada 10 posts, <b>8 sobre celulares e assist&ecirc;ncia</b> e 2 sobre os demais produtos (som, rel&oacute;gio, c&acirc;mera, perfume). O perfil precisa ser lembrado como &ldquo;a loja de celular da feira&rdquo;.</p></div></div>
-  <div class="rule"><div class="rule-num">4</div><div class="rule-body"><strong>O brinde aparece, sempre</strong><p>Kit pel&iacute;cula + capa + carregador + cabo <b>em cima do balc&atilde;o, ao lado do aparelho</b>, em toda oferta. &Eacute; o empurr&atilde;o que fecha a venda.</p></div></div>
-  <div class="rule"><div class="rule-num">5</div><div class="rule-body"><strong>Mostrar a loja e quem atende</strong><p>Fachada, movimento da feira e o Lu&iacute;s atendendo. <b>Loja f&iacute;sica com rosto</b> &eacute; o que derruba o medo de golpe &mdash; nenhum concorrente online tem isso.</p></div></div>
-  <div class="rule"><div class="rule-num">6</div><div class="rule-body"><strong>Todo post chama para o WhatsApp</strong><p>Fecho padr&atilde;o em toda legenda: <b>&ldquo;Chama no WhatsApp e garanta o seu &#128071; link na bio&rdquo;</b>. Post sem chamada &eacute; venda perdida.</p></div></div>
-</div>
+  <!-- PADRAO DE FEED -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reestrutura&ccedil;&atilde;o &middot; Passo 4</div>
+      <div class="section-title">Regras do novo <em>feed</em></div>
+    </div>
 
-<div class="divider"></div>
+    <div class="regras-lista">
+      <div class="regra">
+        <div class="regra-icone">&#127912;</div>
+        <div>
+          <h4>Um padr&atilde;o visual s&oacute;</h4>
+          <p>Todas as artes no mesmo estilo: fundo escuro, logo sempre no mesmo canto, pre&ccedil;o sempre no mesmo lugar. Nada de alternar entre arte amarela, foto crua e logo solta.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128241;</div>
+        <div>
+          <h4>Produto na m&atilde;o, n&atilde;o na prateleira</h4>
+          <p>Foto e v&iacute;deo sempre com o produto sendo usado ou segurado: celular ligado na m&atilde;o, caixa de som tocando, rel&oacute;gio no pulso. Caixa fechada na prateleira n&atilde;o gera desejo.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128181;</div>
+        <div>
+          <h4>Pre&ccedil;o sempre em R$</h4>
+          <p>Padr&atilde;o &uacute;nico: R$ 900, nunca &ldquo;900$&rdquo;. E toda oferta mostra o kit de brinde (pel&iacute;cula, capa, carregador e cabo) ao lado do aparelho &mdash; &eacute; o empurr&atilde;o que fecha a venda.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#127909;</div>
+        <div>
+          <h4>Celular e assist&ecirc;ncia s&atilde;o o carro-chefe</h4>
+          <p>A cada 10 posts, 8 sobre celulares e assist&ecirc;ncia e 2 sobre os demais produtos. Conte&uacute;do seguindo o padr&atilde;o 3-1-1 da ADS: a cada 5 conte&uacute;dos, 3 para alcan&ccedil;ar, 1 para aproximar, 1 para vender. Detalhado no calend&aacute;rio de conte&uacute;do.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128172;</div>
+        <div>
+          <h4>Toda legenda termina com um convite</h4>
+          <p>&ldquo;Chama no WhatsApp e garanta o seu &#128071; link na bio&rdquo; &mdash; em todo post. Post sem convite &eacute; vitrine sem porta.</p>
+        </div>
+      </div>
+      <div class="regra">
+        <div class="regra-icone">&#128295;</div>
+        <div>
+          <h4>Assist&ecirc;ncia aparece toda semana</h4>
+          <p>Antes e depois de conserto, tela trocada na hora, bancada em a&ccedil;&atilde;o. &Eacute; o servi&ccedil;o que traz o cliente de volta todo m&ecirc;s e hoje est&aacute; invis&iacute;vel no feed.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<!-- 05 CHECKLIST -->
-<div class="section">
-  <div class="section-tag">05 &mdash; Primeira Semana</div>
-  <h2>Checklist de <em>implanta&ccedil;&atilde;o</em></h2>
-  <p class="section-desc">O que colocamos de p&eacute; nos primeiros 7 dias, nesta ordem:</p>
+  <!-- PREVIA DO PERFIL NOVO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Pr&eacute;via</div>
+      <div class="section-title">Como fica o perfil <em>novo</em></div>
+    </div>
+    <div class="print-wrap">
+      <img src="mockup-perfil-novo-web.jpg" alt="Pr&eacute;via do perfil novo do Rei dos Importados no Instagram" width="800" height="1375" loading="lazy" style="width:400px; max-width:100%; height:auto; max-height:none;">
+      <p>Simula&ccedil;&atilde;o com todas as mudan&ccedil;as aplicadas: nome pesquis&aacute;vel, bio dentro do limite, link do WhatsApp e os 6 destaques com as capas novas. <a href="mockup-perfil-novo.png" style="color:#7CB8FF;">Abrir em alta resolu&ccedil;&atilde;o</a>.</p>
+    </div>
+  </div>
 
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dia 1:</b> aplicar nome e bio novos no perfil.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dias 1&ndash;2:</b> cliente grava os stories-base (loja, fachada, balc&atilde;o de assist&ecirc;ncia, produtos em m&atilde;os) com roteiro enviado pela ADS.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dias 2&ndash;3:</b> montar os 6 destaques com capas padronizadas.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dia 4:</b> primeiro post no padr&atilde;o novo: oferta de celular com kit de brinde e pre&ccedil;o em R$.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dia 5:</b> primeiro post de assist&ecirc;ncia: antes e depois de um conserto real.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Dias 6&ndash;7:</b> coletar prints de clientes satisfeitos no WhatsApp para o destaque CLIENTES.</div></div>
-  <div class="check"><div class="check-box"></div><div class="check-text"><b>Na sequ&ecirc;ncia:</b> calend&aacute;rio de conte&uacute;do completo (Reels + Stories) e in&iacute;cio dos an&uacute;ncios.</div></div>
+  <!-- CHECKLIST -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">M&atilde;o na massa</div>
+      <div class="section-title">Ordem de <em>implementa&ccedil;&atilde;o</em></div>
+    </div>
+
+    <div class="check-lista">
+      <div class="check-item"><span class="check-fase">Semana 1</span> Atualizar nome exibido e bio nova (efeito imediato na busca)</div>
+      <div class="check-item"><span class="check-fase">Semana 1</span> Gravar os stories-base com roteiro da ADS: loja, fachada, bancada de assist&ecirc;ncia e produtos em m&atilde;os</div>
+      <div class="check-item"><span class="check-fase">Semana 1</span> Criar os 6 destaques com as capas novas (j&aacute; prontas para baixar acima)</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Publicar e fixar os 3 posts: v&iacute;deo &ldquo;quem somos&rdquo; + cat&aacute;logo com pre&ccedil;os em R$ + prova de clientes</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Definir o padr&atilde;o visual &uacute;nico das artes e aplicar nos pr&oacute;ximos posts (pre&ccedil;o sempre em R$)</div>
+      <div class="check-item"><span class="check-fase">Semana 2</span> Coletar prints de agradecimento no WhatsApp para alimentar o destaque &ldquo;Clientes&rdquo;</div>
+      <div class="check-item"><span class="check-fase">Semana 3</span> Iniciar o calend&aacute;rio de conte&uacute;do 3-1-1 (Reels + Stories)</div>
+      <div class="check-item"><span class="check-fase">Cont&iacute;nuo</span> Todo celular que chega entra no destaque &ldquo;Celulares&rdquo; no mesmo dia; toda encomenda entregue vira story no destaque &ldquo;Encomendas&rdquo;</div>
+    </div>
+  </div>
+
+  <!-- PRINT DE REFERENCIA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Registro</div>
+      <div class="section-title">Perfil em <em>19/11/2026</em></div>
+    </div>
+    <div class="print-wrap">
+      <img src="../REFERENCIAS/instagram-atual-mobile-web.jpg" alt="Instagram do Rei dos Importados em 19 de novembro de 2026" width="720" height="1564" loading="lazy" style="width:340px; max-width:100%; height:auto; max-height:none;">
+      <p>Perfil @reidosimportados_brrs antes da reestrutura&ccedil;&atilde;o &mdash; base de compara&ccedil;&atilde;o para os pr&oacute;ximos relat&oacute;rios. <a href="../REFERENCIAS/instagram-atual-perfil.png" style="color:#7CB8FF;">Ver captura completa do feed</a>.</p>
+    </div>
+  </div>
 </div>
 
 <!-- FOOTER -->
 <div class="footer">
-  <p>ADS Company &mdash; <em>Assessoria de Marketing e Performance</em></p>
-  <p class="sub">Review do Instagram &mdash; Rei dos Importados &mdash; 19/11/2026</p>
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Review do Instagram &mdash; Rei dos Importados &mdash; 19/11/2026</div>
 </div>
 
-<script>
-  function copyBio(btn) {
-    const texto = [
-      '\u{1F4F1} Melhor preço em celulares e importados',
-      '\u{1F527} Assistência iOS & Android',
-      '\u{1F4E6} Encomendas do Paraguai',
-      '\u{1F4CD} Feira Livre – Barreiras-BA',
-      '\u{1F447} Chama no WhatsApp'
-    ].join('\n');
-    navigator.clipboard.writeText(texto).then(() => {
-      const orig = btn.textContent;
-      btn.textContent = 'Copiado!';
-      setTimeout(() => { btn.textContent = orig; }, 2000);
-    });
-  }
-</script>
 </body>
 </html>
