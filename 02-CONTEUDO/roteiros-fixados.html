@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Roteiros prontos dos 3 posts fixados do Rei dos Importados: quem somos, catálogo com preços e prova de clientes.">
+<title>Roteiros dos Fixados &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --preto: #060606;
+    --cinza-card: #141414;
+    --cinza-medio: #2A2A2A;
+    --cinza-claro: #888;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --ouro: #C9A24B;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .top-bar {
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--cinza-border); padding: 14px 32px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .top-bar-name { font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--laranja); text-decoration: none; border: 1px solid rgba(255,92,0,0.25);
+    padding: 8px 18px; border-radius: 20px; transition: all 0.3s;
+  }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
+
+  .hero { padding: 72px 32px 48px; text-align: center; background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%); }
+  .hero-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--laranja); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: 400; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p { font-size: 0.95rem; color: var(--cinza-claro); font-weight: 300; max-width: 640px; margin: 0 auto; line-height: 1.7; }
+
+  .container { max-width: 900px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 48px 0 16px; }
+  .section-header { margin-bottom: 28px; }
+  .fix-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 0.62rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--laranja); background: rgba(255,92,0,0.08); border: 1px solid rgba(255,92,0,0.2);
+    padding: 6px 14px; border-radius: 14px; margin-bottom: 12px;
+  }
+  .section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .section-desc { font-size: 0.9rem; color: var(--cinza-claro); font-weight: 300; margin-top: 8px; max-width: 700px; }
+
+  .bloco { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; padding: 26px 28px; margin-bottom: 16px; }
+  .bloco h4 { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--laranja); margin-bottom: 14px; }
+
+  .fala { display: flex; gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .fala:last-child { border-bottom: none; }
+  .fala-tempo { flex-shrink: 0; width: 76px; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; color: var(--ouro); padding-top: 3px; }
+  .fala-texto { font-size: 0.9rem; color: #DDD; font-weight: 300; line-height: 1.65; }
+  .fala-texto strong { color: var(--branco); font-weight: 600; }
+  .fala-texto .dica { display: block; font-size: 0.76rem; color: var(--cinza-claro); margin-top: 4px; font-style: italic; }
+
+  .slide-lista { counter-reset: slide; display: grid; gap: 10px; }
+  .slide-item { background: #0E0E0E; border: 1px solid var(--cinza-border); border-radius: 10px; padding: 14px 18px 14px 56px; position: relative; font-size: 0.87rem; color: #CCC; font-weight: 300; }
+  .slide-item::before {
+    counter-increment: slide; content: counter(slide);
+    position: absolute; left: 16px; top: 50%; transform: translateY(-50%);
+    width: 26px; height: 26px; border-radius: 50%;
+    background: rgba(201,162,75,0.12); border: 1px solid rgba(201,162,75,0.4); color: var(--ouro);
+    display: flex; align-items: center; justify-content: center; font-size: 0.72rem; font-weight: 700;
+  }
+  .slide-item strong { color: var(--branco); font-weight: 600; }
+
+  .legenda-box { background: #0D0D0D; border: 1px dashed rgba(201,162,75,0.35); border-radius: 10px; padding: 18px 20px; font-size: 0.88rem; color: #DDD; font-weight: 300; line-height: 1.8; white-space: pre-line; }
+  .copy-btn {
+    margin-top: 12px; display: inline-block; padding: 9px 20px;
+    font-family: var(--sans); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--laranja); color: #0A0A0C; border: none; border-radius: 14px; cursor: pointer; transition: opacity 0.2s;
+  }
+  .copy-btn:hover { opacity: 0.85; }
+
+  .checklist { list-style: none; }
+  .checklist li { font-size: 0.86rem; color: #BBB; font-weight: 300; padding: 8px 0 8px 26px; position: relative; border-bottom: 1px solid rgba(255,255,255,0.04); }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before { content: '✓'; position: absolute; left: 0; color: var(--verde); font-weight: 700; }
+  .checklist li strong { color: var(--branco); font-weight: 600; }
+
+  .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,92,0,0.15), transparent); margin: 40px 0 0; }
+
+  .footer { text-align: center; padding: 48px 32px 32px; border-top: 1px solid var(--cinza-border); margin-top: 56px; }
+  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--laranja); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .container { padding: 0 16px; }
+    .fala { flex-direction: column; gap: 4px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Conte&uacute;do &middot; Posts Fixados</div>
+  <h1>Roteiros dos 3 <em>fixados</em></h1>
+  <div class="hero-line"></div>
+  <p>Tudo pronto para gravar e publicar: fala a fala do v&iacute;deo &ldquo;Quem Somos&rdquo;, estrutura do cat&aacute;logo com pre&ccedil;os e o passo a passo da prova de clientes. Depois de publicados, os tr&ecirc;s s&atilde;o fixados no topo do perfil, nesta ordem.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <!-- FIXADO 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="fix-badge">Fixado 1 &middot; V&iacute;deo &middot; at&eacute; 40 segundos</div>
+      <div class="section-title">Quem <em>Somos</em></div>
+      <p class="section-desc">O Luiz, na frente da loja, na Feira. Olho na c&acirc;mera, sem decoreba: o roteiro abaixo &eacute; um guia &mdash; se sair com as palavras dele, melhor ainda. O que n&atilde;o pode faltar est&aacute; em negrito.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Roteiro fala a fala</h4>
+      <div class="fala"><div class="fala-tempo">0&ndash;5s</div><div class="fala-texto">&ldquo;Se voc&ecirc; acha que <strong>celular bom em Barreiras custa caro</strong>... deixa eu te mostrar um lugar.&rdquo;<span class="dica">Gancho: come&ccedil;a andando em dire&ccedil;&atilde;o &agrave; loja, c&acirc;mera acompanha.</span></div></div>
+      <div class="fala"><div class="fala-tempo">5&ndash;12s</div><div class="fala-texto">&ldquo;Eu sou o <strong>Luiz</strong>, do <strong>Rei dos Importados</strong>, aqui na <strong>Feira de Barreiras</strong>, no Centro.&rdquo;<span class="dica">Para na frente da fachada, aponta para a placa.</span></div></div>
+      <div class="fala"><div class="fala-tempo">12&ndash;22s</div><div class="fala-texto">&ldquo;Aqui voc&ecirc; encontra <strong>celular, acess&oacute;rio e importado em geral</strong> com o melhor pre&ccedil;o da cidade &mdash; e todo aparelho &eacute; <strong>testado na sua frente</strong> antes de voc&ecirc; pagar.&rdquo;<span class="dica">Corta para dentro da loja: balc&atilde;o, vitrines, aparelho ligando na m&atilde;o.</span></div></div>
+      <div class="fala"><div class="fala-tempo">22&ndash;30s</div><div class="fala-texto">&ldquo;Deu qualquer problema? A <strong>assist&ecirc;ncia &eacute; aqui no mesmo balc&atilde;o</strong>, iOS e Android. E se eu n&atilde;o tiver o que voc&ecirc; procura, <strong>eu trago do Paraguai pra voc&ecirc;</strong>.&rdquo;<span class="dica">Mostra a bancada de assist&ecirc;ncia enquanto fala.</span></div></div>
+      <div class="fala"><div class="fala-tempo">30&ndash;40s</div><div class="fala-texto">&ldquo;<strong>Chama no WhatsApp</strong>, pede o pre&ccedil;o do seu modelo e vem buscar hoje. Link aqui embaixo &#128071;&rdquo;<span class="dica">Fecha sorrindo, apontando para baixo. Fim.</span></div></div>
+    </div>
+
+    <div class="bloco">
+      <h4>Instru&ccedil;&otilde;es de grava&ccedil;&atilde;o</h4>
+      <ul class="checklist">
+        <li><strong>Vertical</strong> (9:16), celular na m&atilde;o de outra pessoa ou tripé &mdash; nunca selfie esticada</li>
+        <li><strong>Luz do dia</strong>, de manh&atilde; ou fim de tarde, com o movimento da feira ao fundo</li>
+        <li>Gravar <strong>2 ou 3 vezes</strong> e mandar tudo para a ADS escolher e cortar</li>
+        <li>Falar <strong>um pouco mais alto</strong> que o normal por causa do barulho da feira</li>
+        <li>Camisa da loja ou camisa lisa escura &mdash; sem estampa de outra marca</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Legenda pronta</h4>
+      <div class="legenda-box" id="leg1">&#128081; Esse &eacute; o Rei dos Importados.
+
+Celular, acess&oacute;rio e importado com o melhor pre&ccedil;o de Barreiras &mdash; testado na sua frente, com garantia da loja e assist&ecirc;ncia no mesmo balc&atilde;o.
+
+&#128205; Feira Livre, Centro &mdash; Barreiras-BA
+
+Chama no WhatsApp e garanta o seu &#128071; link na bio</div>
+      <button class="copy-btn" onclick="copiar('leg1', this)">Copiar legenda</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FIXADO 2 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="fix-badge">Fixado 2 &middot; Carrossel &middot; 8 slides</div>
+      <div class="section-title">Cat&aacute;logo com <em>pre&ccedil;os</em></div>
+      <p class="section-desc">O post que o cliente salva e manda para a fam&iacute;lia. A ADS monta as artes no padr&atilde;o do brandbook (fundo preto, pre&ccedil;o em ouro, R$ sempre); o Luiz s&oacute; confirma os modelos e pre&ccedil;os da semana e manda as fotos dos aparelhos.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Estrutura do carrossel</h4>
+      <div class="slide-lista">
+        <div class="slide-item"><strong>Capa:</strong> coroa + &ldquo;TABELA DO REI&rdquo; + &ldquo;os pre&ccedil;os desta semana&rdquo; &mdash; fundo preto, t&iacute;tulo em ouro</div>
+        <div class="slide-item"><strong>Slides 2 a 7:</strong> um aparelho por slide &mdash; foto do celular na m&atilde;o, nome do modelo, mem&oacute;ria, <strong>pre&ccedil;o em R$ grande em ouro</strong> e a faixa &ldquo;kit prote&ccedil;&atilde;o de brinde&rdquo;</div>
+        <div class="slide-item"><strong>Slide final:</strong> &ldquo;N&atilde;o achou o seu? A gente traz do Paraguai&rdquo; + convite para o WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h4>O que o Luiz manda para a ADS</h4>
+      <ul class="checklist">
+        <li>Lista dos <strong>6 aparelhos mais vendidos</strong> com pre&ccedil;o &agrave; vista e parcelado</li>
+        <li><strong>Foto de cada aparelho ligado, na m&atilde;o</strong>, na frente do fundo escuro da loja</li>
+        <li>Aviso sempre que um pre&ccedil;o mudar &mdash; o cat&aacute;logo fixado nunca pode ficar desatualizado</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Legenda pronta</h4>
+      <div class="legenda-box" id="leg2">&#128081; TABELA DO REI &mdash; os pre&ccedil;os desta semana
+
+Todo aparelho testado na sua frente, com kit de prote&ccedil;&atilde;o de brinde (pel&iacute;cula, capa, carregador e cabo) e garantia da loja.
+
+Parcelamos no cart&atilde;o.
+
+&#128230; N&atilde;o achou o seu modelo? A gente traz do Paraguai.
+
+Chama no WhatsApp e garanta o seu &#128071; link na bio</div>
+      <button class="copy-btn" onclick="copiar('leg2', this)">Copiar legenda</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- FIXADO 3 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="fix-badge">Fixado 3 &middot; Carrossel ou Reels</div>
+      <div class="section-title">Prova de <em>clientes</em></div>
+      <p class="section-desc">O post que derruba o medo de golpe: gente de verdade comprando, retirando e agradecendo. Come&ccedil;a como carrossel de prints e evolui para v&iacute;deo quando os primeiros clientes toparem gravar.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>O que coletar (j&aacute; nesta semana)</h4>
+      <ul class="checklist">
+        <li><strong>Prints de agradecimento no WhatsApp</strong> &mdash; apagar foto e sobrenome do cliente antes de publicar</li>
+        <li><strong>Foto do cliente retirando o aparelho</strong> no balc&atilde;o (pedir autoriza&ccedil;&atilde;o na hora, a maioria topa)</li>
+        <li><strong>Antes e depois de um conserto</strong> &mdash; tela quebrada ao lado do aparelho pronto</li>
+        <li>Quando um cliente estiver feliz na loja: <strong>&ldquo;posso gravar 10 segundos seus falando o que achou?&rdquo;</strong></li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Estrutura do carrossel</h4>
+      <div class="slide-lista">
+        <div class="slide-item"><strong>Capa:</strong> &ldquo;QUEM COMPRA, VOLTA&rdquo; &mdash; fundo preto, coroa, t&iacute;tulo em ouro</div>
+        <div class="slide-item"><strong>Slides 2 a 6:</strong> prints de agradecimento + fotos de clientes retirando aparelho, um por slide</div>
+        <div class="slide-item"><strong>Slide 7:</strong> antes e depois de um conserto real na bancada</div>
+        <div class="slide-item"><strong>Slide final:</strong> &ldquo;Amanh&atilde; o pr&oacute;ximo print pode ser o seu&rdquo; + convite para o WhatsApp</div>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h4>Legenda pronta</h4>
+      <div class="legenda-box" id="leg3">&#128081; Quem compra no Rei, volta &mdash; e manda mensagem depois.
+
+Aparelho testado na frente, kit de brinde, garantia da loja e assist&ecirc;ncia no mesmo balc&atilde;o. &Eacute; por isso que a feira inteira indica.
+
+Amanh&atilde; o pr&oacute;ximo agradecimento pode ser o seu.
+
+Chama no WhatsApp &#128071; link na bio</div>
+      <button class="copy-btn" onclick="copiar('leg3', this)">Copiar legenda</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Roteiros dos Posts Fixados &mdash; Rei dos Importados &mdash; 20/11/2026</div>
+</div>
+
+<script>
+  function copiar(id, btn) {
+    const texto = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(texto).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copiado!';
+      setTimeout(() => { btn.textContent = orig; }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

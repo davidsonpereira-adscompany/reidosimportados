@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Planejamento de tráfego pago do Rei dos Importados para novembro e dezembro de 2026: Black Friday, Natal e virada de ano.">
+<title>Tr&aacute;fego Pago Nov&ndash;Dez &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --laranja: #FF5C00;
+    --preto: #060606;
+    --cinza-card: #141414;
+    --cinza-medio: #2A2A2A;
+    --cinza-claro: #888;
+    --cinza-border: rgba(255,255,255,0.06);
+    --branco: #F5F5F5;
+    --verde: #22C55E;
+    --ouro: #C9A24B;
+    --vermelho-natal: #C0392B;
+    --serif: 'Playfair Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+  }
+  *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+  body { background: var(--preto); color: var(--branco); font-family: var(--sans); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+  .top-bar {
+    background: rgba(10,10,10,0.92); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--cinza-border); padding: 14px 32px;
+    position: sticky; top: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .top-bar-name { font-family: var(--serif); font-size: 0.95rem; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.8); }
+  .top-bar-name em { font-style: italic; color: var(--laranja); }
+  .btn-voltar {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--laranja); text-decoration: none; border: 1px solid rgba(255,92,0,0.25);
+    padding: 8px 18px; border-radius: 20px; transition: all 0.3s;
+  }
+  .btn-voltar:hover { background: var(--laranja); color: #fff; }
+
+  .hero { padding: 72px 32px 48px; text-align: center; background: linear-gradient(180deg, #0A0705 0%, var(--preto) 100%); }
+  .hero-tag { display: inline-block; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.4em; text-transform: uppercase; color: var(--laranja); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--serif); font-size: clamp(1.7rem, 5vw, 2.6rem); font-weight: 400; line-height: 1.2; margin-bottom: 12px; }
+  .hero h1 em { font-style: italic; color: var(--laranja); }
+  .hero-line { width: 60px; height: 2px; background: var(--laranja); margin: 22px auto; }
+  .hero p { font-size: 0.95rem; color: var(--cinza-claro); font-weight: 300; max-width: 660px; margin: 0 auto; line-height: 1.7; }
+
+  .container { max-width: 960px; margin: 0 auto; padding: 0 32px; }
+  .section { padding: 52px 0 20px; }
+  .section-header { text-align: center; margin-bottom: 36px; }
+  .section-tag { font-size: 0.6rem; font-weight: 600; letter-spacing: 0.35em; text-transform: uppercase; color: var(--laranja); margin-bottom: 12px; }
+  .section-title { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; }
+  .section-title em { font-style: italic; color: var(--laranja); }
+  .divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, rgba(255,92,0,0.15), transparent); margin: 32px 0 0; }
+
+  .base-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 860px) { .base-grid { grid-template-columns: repeat(2, 1fr); } }
+  .base-box { background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; padding: 20px 16px; text-align: center; }
+  .base-box .valor { font-family: var(--serif); font-size: 1.1rem; color: var(--laranja); line-height: 1.3; }
+  .base-box .rotulo { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cinza-claro); margin-top: 8px; }
+
+  .fase {
+    background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 16px;
+    padding: 30px; margin-bottom: 22px; position: relative; overflow: hidden;
+  }
+  .fase::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; }
+  .fase.f1::before { background: var(--laranja); }
+  .fase.f2::before { background: var(--vermelho-natal); }
+  .fase.f3::before { background: var(--ouro); }
+  .fase-chip {
+    display: inline-block; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase;
+    padding: 5px 14px; border-radius: 13px; margin-bottom: 12px;
+  }
+  .f1 .fase-chip { background: rgba(255,92,0,0.1); color: var(--laranja); border: 1px solid rgba(255,92,0,0.3); }
+  .f2 .fase-chip { background: rgba(192,57,43,0.14); color: #E74C3C; border: 1px solid rgba(192,57,43,0.4); }
+  .f3 .fase-chip { background: rgba(201,162,75,0.12); color: var(--ouro); border: 1px solid rgba(201,162,75,0.35); }
+  .fase h3 { font-family: var(--serif); font-size: 1.3rem; font-weight: 400; margin-bottom: 4px; }
+  .fase .periodo { font-size: 0.78rem; color: var(--cinza-claro); font-weight: 500; letter-spacing: 0.05em; margin-bottom: 16px; }
+  .fase p.ideia { font-size: 0.88rem; color: #CCC; font-weight: 300; line-height: 1.7; margin-bottom: 18px; }
+  .fase p.ideia strong { color: var(--branco); font-weight: 600; }
+
+  .fase-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 760px) { .fase-cols { grid-template-columns: 1fr; } }
+  .fase-col { background: #0E0E0E; border: 1px solid var(--cinza-border); border-radius: 12px; padding: 18px 20px; }
+  .fase-col h5 { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--laranja); margin-bottom: 10px; }
+  .fase-col ul { list-style: none; }
+  .fase-col li { font-size: 0.83rem; color: #BBB; font-weight: 300; padding: 5px 0 5px 20px; position: relative; line-height: 1.55; }
+  .fase-col li::before { content: '•'; position: absolute; left: 4px; color: var(--laranja); }
+  .fase-col li strong { color: var(--branco); font-weight: 600; }
+
+  .criativo-card { background: #0E0E0E; border: 1px solid rgba(201,162,75,0.25); border-radius: 12px; padding: 18px 20px; margin-top: 16px; }
+  .criativo-card h5 { font-size: 0.64rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ouro); margin-bottom: 10px; }
+  .criativo-card li strong { color: var(--branco); }
+  .criativo-card ul { list-style: none; }
+  .criativo-card li { font-size: 0.83rem; color: #BBB; font-weight: 300; padding: 5px 0 5px 20px; position: relative; line-height: 1.55; }
+  .criativo-card li::before { content: '★'; position: absolute; left: 0; color: var(--ouro); font-size: 0.7rem; top: 9px; }
+
+  .verba-tabela { width: 100%; border-collapse: collapse; background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 14px; overflow: hidden; }
+  .verba-tabela th { background: var(--cinza-medio); padding: 12px 16px; text-align: left; font-size: 0.68rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cinza-claro); }
+  .verba-tabela td { padding: 13px 16px; border-top: 1px solid rgba(255,255,255,0.04); font-size: 0.86rem; color: #CCC; font-weight: 300; }
+  .verba-tabela td strong { color: var(--branco); font-weight: 600; }
+  .verba-tabela .ouro { color: var(--ouro); font-weight: 600; }
+  .nota { font-size: 0.78rem; color: var(--cinza-claro); font-weight: 300; margin-top: 14px; line-height: 1.6; }
+
+  .check-lista { display: grid; gap: 10px; }
+  .check-item {
+    background: var(--cinza-card); border: 1px solid var(--cinza-border); border-radius: 12px;
+    padding: 15px 20px; display: flex; align-items: center; gap: 14px; font-size: 0.86rem; color: #CCC;
+  }
+  .check-fase {
+    flex-shrink: 0; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--laranja); background: rgba(255,92,0,0.08); border: 1px solid rgba(255,92,0,0.2);
+    padding: 4px 10px; border-radius: 10px;
+  }
+
+  .footer { text-align: center; padding: 48px 32px 32px; border-top: 1px solid var(--cinza-border); margin-top: 56px; }
+  .footer-brand { font-family: var(--serif); font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 8px; }
+  .footer-brand em { font-style: italic; color: var(--laranja); }
+  .footer-sub { font-size: 0.72rem; color: rgba(255,255,255,0.3); font-weight: 300; }
+
+  @media (max-width: 600px) {
+    .top-bar { padding: 12px 16px; }
+    .top-bar-name { display: none; }
+    .container { padding: 0 16px; }
+    .section { padding: 40px 0 16px; }
+    .fase { padding: 22px 18px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Tr&aacute;fego Pago &middot; Novembro e Dezembro 2026</div>
+  <h1>O Rei na <em>Black Friday</em> e no Natal</h1>
+  <div class="hero-line"></div>
+  <p>Plano de an&uacute;ncios no Instagram e Facebook para os 40 dias mais quentes do varejo: o fim da Black Friday, o Natal e a virada do ano &mdash; todos com o mesmo destino: conversa no WhatsApp e cliente no balc&atilde;o.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <!-- BASE -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Base de tudo</div>
+      <div class="section-title">Como as campanhas <em>funcionam</em></div>
+    </div>
+    <div class="base-grid">
+      <div class="base-box"><div class="valor">WhatsApp</div><div class="rotulo">Destino de todo an&uacute;ncio</div></div>
+      <div class="base-box"><div class="valor">Barreiras + 30 km</div><div class="rotulo">P&uacute;blico local</div></div>
+      <div class="base-box"><div class="valor">[REI]</div><div class="rotulo">Prefixo na conta compartilhada</div></div>
+      <div class="base-box"><div class="valor">R$ sempre</div><div class="rotulo">Pre&ccedil;o claro em todo criativo</div></div>
+    </div>
+    <p class="nota" style="text-align:center; max-width:720px; margin:18px auto 0;">An&uacute;ncios de celular na Meta n&atilde;o podem prometer &ldquo;original de operadora&rdquo; nem usar marca alheia como se fosse an&uacute;ncio oficial &mdash; falamos de pre&ccedil;o, teste na frente do cliente, brinde e garantia da loja, que &eacute; o que importa e n&atilde;o d&aacute; problema.</p>
+  </div>
+
+  <!-- FASE 1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Tr&ecirc;s fases</div>
+      <div class="section-title">O calend&aacute;rio de <em>campanhas</em></div>
+    </div>
+
+    <div class="fase f1">
+      <span class="fase-chip">Fase 1 &middot; 21 a 30/11</span>
+      <h3>Black do Rei</h3>
+      <div class="periodo">Esquenta (21&ndash;26) &rarr; Black Friday (27&ndash;28) &rarr; &uacute;ltima chamada (29&ndash;30)</div>
+      <p class="ideia"><strong>A ideia:</strong> enquanto todo mundo anuncia desconto gen&eacute;rico, o Rei anuncia pre&ccedil;o com prova: aparelho na m&atilde;o, valor em R$ grande, kit de brinde na mesa e o lembrete &mdash; testado na sua frente, na Feira. Sem &ldquo;at&eacute; 70%&rdquo; invent&aacute;vel: oferta real, com urg&ecirc;ncia real de estoque.</p>
+      <div class="fase-cols">
+        <div class="fase-col">
+          <h5>Campanhas</h5>
+          <ul>
+            <li><strong>[REI] BLACK &mdash; Ofertas WhatsApp:</strong> an&uacute;ncio de conversa no WhatsApp com os 3 aparelhos de maior giro em oferta</li>
+            <li><strong>[REI] BLACK &mdash; Reconhecimento local:</strong> v&iacute;deo &ldquo;Quem Somos&rdquo; rodando para a cidade conhecer a loja (alcance barato, prepara o Natal)</li>
+          </ul>
+        </div>
+        <div class="fase-col">
+          <h5>P&uacute;blicos</h5>
+          <ul>
+            <li>Barreiras + 30 km, 18&ndash;50 anos, aberto (a Meta otimiza sozinha)</li>
+            <li>Envolvidos com o perfil nos &uacute;ltimos 30 dias (remarketing da semana Black)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="criativo-card">
+        <h5>Criativos da fase</h5>
+        <ul>
+          <li><strong>&ldquo;TABELA BLACK DO REI&rdquo;</strong> &mdash; arte no padr&atilde;o do brandbook: fundo preto, pre&ccedil;o riscado e pre&ccedil;o novo em ouro, kit de brinde na foto</li>
+          <li><strong>V&iacute;deo de balc&atilde;o</strong> &mdash; Luiz mostrando o aparelho da oferta ligando na m&atilde;o: &ldquo;esse aqui, s&oacute; essa semana, por R$ ___&rdquo;</li>
+          <li><strong>&Uacute;ltima chamada (29&ndash;30/11)</strong> &mdash; story-an&uacute;ncio com contagem: &ldquo;acabou a Black, ficou o pre&ccedil;o do Rei at&eacute; domingo&rdquo;</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FASE 2 -->
+    <div class="fase f2">
+      <span class="fase-chip">Fase 2 &middot; 01 a 24/12</span>
+      <h3>O Noel da Feira</h3>
+      <div class="periodo">Campanha-m&atilde;e do Natal &mdash; esquenta (01&ndash;10) &rarr; pico (11&ndash;23) &rarr; v&eacute;spera (24)</div>
+      <p class="ideia"><strong>A ideia que voc&ecirc; j&aacute; teve, abra&ccedil;ada:</strong> o Luiz vestido de <strong>Papai Noel com a coroa do Rei por cima do gorro</strong> &mdash; o &ldquo;Noel da Feira&rdquo;. &Eacute; imposs&iacute;vel passar o dedo sem notar: o Noel que em vez de trenó tem balc&atilde;o, e em vez de promessa tem pre&ccedil;o. Personagem &uacute;nico na cidade, rende an&uacute;ncio, Reels org&acirc;nico e foto na porta da loja o m&ecirc;s inteiro.</p>
+      <div class="fase-cols">
+        <div class="fase-col">
+          <h5>Campanhas</h5>
+          <ul>
+            <li><strong>[REI] NATAL &mdash; Presentes WhatsApp:</strong> conversa no WhatsApp com o mote &ldquo;presente bom &eacute; o que a pessoa usa todo dia&rdquo;</li>
+            <li><strong>[REI] NATAL &mdash; Encomendas do Paraguai:</strong> &ldquo;pediu at&eacute; 10/12, chega antes do Natal&rdquo; &mdash; corrida de encomendas com prazo real (data a confirmar com o Luiz)</li>
+            <li><strong>[REI] NATAL &mdash; Remarketing:</strong> quem conversou na Black e n&atilde;o comprou v&ecirc; a oferta de Natal</li>
+          </ul>
+        </div>
+        <div class="fase-col">
+          <h5>P&uacute;blicos</h5>
+          <ul>
+            <li>Barreiras + 30 km, foco 20&ndash;45 (quem presenteia filho, parceiro e pais)</li>
+            <li>Envolvidos 60 dias + quem mandou mensagem e n&atilde;o fechou</li>
+          </ul>
+        </div>
+      </div>
+      <div class="criativo-card">
+        <h5>Criativos da fase &mdash; o Noel da Feira</h5>
+        <ul>
+          <li><strong>Foto-s&iacute;mbolo:</strong> Luiz de Papai Noel, coroa sobre o gorro, bra&ccedil;os cruzados na frente da loja &mdash; &ldquo;Esse ano o Noel mora na Feira&rdquo;</li>
+          <li><strong>V&iacute;deo-an&uacute;ncio:</strong> Noel atendendo no balc&atilde;o, testando celular na frente do &ldquo;presenteado&rdquo;: &ldquo;aqui o presente sai testado, com brinde e garantia&rdquo;</li>
+          <li><strong>Carrossel &ldquo;presentes do Rei&rdquo;:</strong> celular, fone, caixa de som, rel&oacute;gio e perfume &mdash; um presente por slide com pre&ccedil;o em R$ (&eacute; o m&ecirc;s de brilhar o mix da loja)</li>
+          <li><strong>Story v&eacute;spera (24/12):</strong> &ldquo;esqueceu o presente? At&eacute; &agrave;s ___ de hoje o Noel resolve&rdquo;</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- FASE 3 -->
+    <div class="fase f3">
+      <span class="fase-chip">Fase 3 &middot; 26/12 a 05/01</span>
+      <h3>Virada do Rei</h3>
+      <div class="periodo">P&oacute;s-Natal e ano novo &mdash; quando todo mundo tem dinheiro de presente na m&atilde;o</div>
+      <p class="ideia"><strong>A ideia:</strong> dezembro n&atilde;o acaba no dia 25. Tem 13&ordm; sobrando, dinheiro recebido de presente e a promessa de ano novo &mdash; &ldquo;ano novo, celular novo&rdquo;. E quem ganhou aparelho no Natal precisa de pel&iacute;cula, capa, fone: a loja vira o posto oficial do p&oacute;s-presente.</p>
+      <div class="fase-cols">
+        <div class="fase-col">
+          <h5>Campanhas</h5>
+          <ul>
+            <li><strong>[REI] VIRADA &mdash; Ano novo, celular novo:</strong> conversa no WhatsApp com as ofertas de virada</li>
+            <li><strong>[REI] VIRADA &mdash; Acess&oacute;rios e prote&ccedil;&atilde;o:</strong> alcance local barato: &ldquo;ganhou celular no Natal? Protege ele hoje&rdquo;</li>
+          </ul>
+        </div>
+        <div class="fase-col">
+          <h5>P&uacute;blicos</h5>
+          <ul>
+            <li>Barreiras + 30 km, 18&ndash;50</li>
+            <li>Todo mundo que interagiu em nov/dez (a base mais quente do ano)</li>
+          </ul>
+        </div>
+      </div>
+      <div class="criativo-card">
+        <h5>Criativos da fase</h5>
+        <ul>
+          <li><strong>&ldquo;Ano novo, celular novo&rdquo;</strong> &mdash; aparelho na m&atilde;o com fogos ao fundo da arte, pre&ccedil;o em ouro</li>
+          <li><strong>&ldquo;Kit prote&ccedil;&atilde;o do presente&rdquo;</strong> &mdash; pel&iacute;cula + capa aplicadas na hora, na loja</li>
+          <li><strong>Retrospectiva de provas</strong> &mdash; os melhores prints de clientes do ano em carrossel</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERBA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Investimento</div>
+      <div class="section-title">Sugest&atilde;o de <em>verba</em></div>
+    </div>
+    <table class="verba-tabela">
+      <thead><tr><th>Fase</th><th>Per&iacute;odo</th><th>Por dia</th><th>Total da fase</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Black do Rei</strong></td><td>21 a 30/11 (10 dias)</td><td class="ouro">R$ 30</td><td class="ouro">R$ 300</td></tr>
+        <tr><td><strong>O Noel da Feira</strong></td><td>01 a 24/12 (24 dias)</td><td class="ouro">R$ 35</td><td class="ouro">R$ 840</td></tr>
+        <tr><td><strong>Virada do Rei</strong></td><td>26/12 a 05/01 (11 dias)</td><td class="ouro">R$ 25</td><td class="ouro">R$ 275</td></tr>
+        <tr><td colspan="3"><strong>Total dos 40 dias mais quentes do varejo</strong></td><td class="ouro"><strong>R$ 1.415</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="nota">Valores de refer&ecirc;ncia para fechar com o Luiz na reuni&atilde;o &mdash; d&aacute; para come&ccedil;ar com menos (R$ 20/dia) ou escalar o que estiver dando resultado, semana a semana. No pico de Natal (11 a 23/12), se as conversas estiverem baratas, a recomenda&ccedil;&atilde;o &eacute; subir o Noel da Feira para R$ 50/dia. Importante: campanhas sempre com o prefixo <strong>[REI]</strong>, porque a conta de an&uacute;ncios &eacute; compartilhada com a AFL.</p>
+  </div>
+
+  <!-- COMO MEDIMOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Resultado</div>
+      <div class="section-title">Como vamos <em>medir</em></div>
+    </div>
+    <div class="base-grid">
+      <div class="base-box"><div class="valor">Conversas</div><div class="rotulo">Novas conversas no WhatsApp</div></div>
+      <div class="base-box"><div class="valor">Custo por conversa</div><div class="rotulo">Quanto custa cada cliente que chama</div></div>
+      <div class="base-box"><div class="valor">Vendas</div><div class="rotulo">Fechadas no balc&atilde;o e no WhatsApp</div></div>
+      <div class="base-box"><div class="valor">Semanal</div><div class="rotulo">Leitura e ajuste toda segunda</div></div>
+    </div>
+    <p class="nota" style="text-align:center; max-width:700px; margin:18px auto 0;">Pe&ccedil;a de ouro da medi&ccedil;&atilde;o: o Luiz pergunta &ldquo;viu a gente no Instagram?&rdquo; para quem chega na loja &mdash; simples e revela o que o n&uacute;mero da Meta n&atilde;o mostra.</p>
+  </div>
+
+  <!-- PROXIMOS PASSOS -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">M&atilde;o na massa</div>
+      <div class="section-title">Para come&ccedil;ar <em>agora</em></div>
+    </div>
+    <div class="check-lista">
+      <div class="check-item"><span class="check-fase">Hoje</span> Luiz confirma: verba, os 3 aparelhos da Black com pre&ccedil;os e condi&ccedil;&otilde;es de parcelamento</div>
+      <div class="check-item"><span class="check-fase">Hoje</span> Confirmar o ID da conta de an&uacute;ncios compartilhada com a AFL e o acesso da ADS</div>
+      <div class="check-item"><span class="check-fase">21/11</span> Subir [REI] BLACK com a Tabela Black do Rei + v&iacute;deo de balc&atilde;o</div>
+      <div class="check-item"><span class="check-fase">At&eacute; 30/11</span> Providenciar a fantasia de Papai Noel + coroa e fazer a sess&atilde;o de fotos/v&iacute;deos do Noel da Feira na loja</div>
+      <div class="check-item"><span class="check-fase">01/12</span> Virar a chave: entra o Noel da Feira, Black sai do ar</div>
+      <div class="check-item"><span class="check-fase">26/12</span> Entra a Virada do Rei com remarketing de toda a base de nov/dez</div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Planejamento de Tr&aacute;fego Pago Nov&ndash;Dez &mdash; Rei dos Importados &mdash; 20/11/2026</div>
+</div>
+
+</body>
+</html>
