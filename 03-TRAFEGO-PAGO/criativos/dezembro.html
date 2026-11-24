@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criativos Dezembro &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --ouro:#C9A24B; --natal:#E74C3C; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--natal);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--natal)}
+  .hero-line{width:60px;height:2px;background:var(--natal);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:660px;margin:0 auto;line-height:1.7}
+  .container{max-width:900px;margin:0 auto;padding:0 32px}
+  .section{padding:44px 0 12px}
+  .badge{display:inline-flex;gap:10px;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--natal);background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.25);padding:6px 14px;border-radius:14px;margin-bottom:12px}
+  .badge.ouro{color:var(--ouro);background:rgba(201,162,75,0.08);border-color:rgba(201,162,75,0.3)}
+  .section-title{font-family:var(--serif);font-size:1.4rem;font-weight:400}
+  .section-title em{font-style:italic;color:var(--natal)}
+  .section-desc{font-size:0.88rem;color:var(--claro);font-weight:300;margin-top:8px;max-width:720px}
+  .bloco{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:24px 26px;margin:16px 0}
+  .bloco h4{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--laranja);margin-bottom:14px}
+  .fala{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .fala:last-child{border-bottom:none}
+  .fala-tempo{flex-shrink:0;width:76px;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:var(--ouro);padding-top:3px}
+  .fala-texto{font-size:0.89rem;color:#DDD;font-weight:300;line-height:1.65}
+  .fala-texto strong{color:var(--branco);font-weight:600}
+  .fala-texto .dica{display:block;font-size:0.76rem;color:var(--claro);margin-top:4px;font-style:italic}
+  .copia-box{background:#0D0D0D;border:1px dashed rgba(201,162,75,0.35);border-radius:10px;padding:16px 18px;font-size:0.87rem;color:#DDD;font-weight:300;line-height:1.75;white-space:pre-line}
+  .copy-btn{margin-top:12px;display:inline-block;padding:9px 20px;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--laranja);color:#0A0A0C;border:none;border-radius:14px;cursor:pointer;transition:opacity 0.2s}
+  .copy-btn:hover{opacity:0.85}
+  .slide-lista{counter-reset:slide;display:grid;gap:10px}
+  .slide-item{background:#0E0E0E;border:1px solid var(--borda);border-radius:10px;padding:13px 18px 13px 56px;position:relative;font-size:0.86rem;color:#CCC;font-weight:300}
+  .slide-item::before{counter-increment:slide;content:counter(slide);position:absolute;left:16px;top:50%;transform:translateY(-50%);width:26px;height:26px;border-radius:50%;background:rgba(201,162,75,0.12);border:1px solid rgba(201,162,75,0.4);color:var(--ouro);display:flex;align-items:center;justify-content:center;font-size:0.72rem;font-weight:700}
+  .slide-item strong{color:var(--branco);font-weight:600}
+  .lista{list-style:none}
+  .lista li{font-size:0.86rem;color:#BBB;font-weight:300;padding:7px 0 7px 24px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .lista li:last-child{border-bottom:none}
+  .lista li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:700}
+  .lista li strong{color:var(--branco);font-weight:600}
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(231,76,60,0.2),transparent);margin:36px 0 0}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}.fala{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="index.html" class="btn-voltar">&larr; Criativos de Tr&aacute;fego</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Criativos de Tr&aacute;fego &middot; Dezembro 2026</div>
+  <h1>O Noel da Feira &amp; a <em>Virada do Rei</em></h1>
+  <div class="hero-line"></div>
+  <p>Os an&uacute;ncios de dezembro: o Luiz vira o Noel da Feira &mdash; Papai Noel com a coroa do Rei &mdash; e janeiro come&ccedil;a com &ldquo;ano novo, celular novo&rdquo;. Roteiros, textos e a lista da sess&atilde;o de fotos, tudo pronto.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <!-- SESSAO NOEL -->
+  <div class="section">
+    <div class="badge">Antes de tudo &middot; at&eacute; 30/11</div>
+    <div class="section-title">A sess&atilde;o do <em>Noel da Feira</em></div>
+    <p class="section-desc">Uma manh&atilde; na loja rende todos os criativos do m&ecirc;s. Lista do que providenciar e gravar:</p>
+    <div class="bloco">
+      <h4>Providenciar</h4>
+      <ul class="lista">
+        <li><strong>Fantasia completa de Papai Noel</strong> (roupa, cinto, barba) no tamanho do Luiz</li>
+        <li><strong>A coroa</strong> &mdash; para usar por cima do gorro (&eacute; a assinatura do personagem)</li>
+        <li>Alguns <strong>celulares e produtos embrulhados</strong> como presente (papel vermelho ou dourado)</li>
+      </ul>
+    </div>
+    <div class="bloco">
+      <h4>Takes da sess&atilde;o (nesta ordem, ~1h30)</h4>
+      <ul class="lista">
+        <li><strong>Foto-s&iacute;mbolo:</strong> Noel de bra&ccedil;os cruzados na frente da loja, coroa sobre o gorro, olhando para a c&acirc;mera</li>
+        <li><strong>Foto no balc&atilde;o:</strong> Noel entregando uma sacola/presente para um cliente (pode ser algu&eacute;m da feira)</li>
+        <li><strong>V&iacute;deo 1:</strong> roteiro do Criativo N2 abaixo (an&uacute;ncio principal)</li>
+        <li><strong>V&iacute;deo 2:</strong> Noel testando um celular na frente de um &ldquo;presenteado&rdquo; (sem fala, para Reels e stories)</li>
+        <li><strong>Sobras valiosas:</strong> Noel acenando, Noel apontando para a c&acirc;mera, Noel segurando caixa de encomenda &mdash; 10s de cada</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- N1 -->
+  <div class="section">
+    <div class="badge">Criativo N1 &middot; Foto &middot; 01 a 23/12</div>
+    <div class="section-title">&ldquo;Esse ano o Noel mora na <em>Feira</em>&rdquo;</div>
+    <p class="section-desc">A foto-s&iacute;mbolo vira o an&uacute;ncio de apresenta&ccedil;&atilde;o do personagem.</p>
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cpn1">&#127877; Esse ano o Papai Noel n&atilde;o vem do Polo Norte.
+
+Ele mora na Feira de Barreiras &mdash; e em vez de tren&oacute;, tem balc&atilde;o: celulares, acess&oacute;rios e importados testados na sua frente, com brinde e garantia da loja.
+
+&#128081; O Noel da Feira j&aacute; est&aacute; atendendo.
+
+Chama no WhatsApp e garanta o presente &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpn1',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <!-- N2 -->
+  <div class="section">
+    <div class="badge">Criativo N2 &middot; V&iacute;deo &middot; principal de dezembro</div>
+    <div class="section-title">O Noel <em>atendendo</em></div>
+    <div class="bloco">
+      <h4>Roteiro fala a fala (at&eacute; 30s)</h4>
+      <div class="fala"><div class="fala-tempo">0&ndash;4s</div><div class="fala-texto">&ldquo;Ho ho ho... aqui o presente <strong>sai testado</strong>, viu?&rdquo;<span class="dica">Noel no balc&atilde;o, ligando um celular na frente da c&acirc;mera. O contraste j&aacute; &eacute; o gancho.</span></div></div>
+      <div class="fala"><div class="fala-tempo">4&ndash;14s</div><div class="fala-texto">&ldquo;Esse ano o Noel mora na <strong>Feira de Barreiras</strong>: celular, fone, caixa de som, rel&oacute;gio, perfume... <strong>presente pra todo mundo da fam&iacute;lia</strong>, com o melhor pre&ccedil;o da cidade.&rdquo;<span class="dica">Vai mostrando os produtos embrulhados no balc&atilde;o.</span></div></div>
+      <div class="fala"><div class="fala-tempo">14&ndash;22s</div><div class="fala-texto">&ldquo;E todo presente sai daqui <strong>com brinde, com garantia</strong> &mdash; e se der qualquer d&uacute;vida, o Noel tem at&eacute; assist&ecirc;ncia t&eacute;cnica.&rdquo;<span class="dica">Aponta para a bancada, ri.</span></div></div>
+      <div class="fala"><div class="fala-tempo">22&ndash;30s</div><div class="fala-texto">&ldquo;<strong>Chama o Noel no WhatsApp</strong> e deixa o presente garantido antes da correria &#128071;&rdquo;</div></div>
+    </div>
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cpn2">&#127877;&#128081; O Noel da Feira est&aacute; atendendo.
+
+Presente para todo mundo da fam&iacute;lia: celulares, fones, caixas de som, rel&oacute;gios e perfumes importados &mdash; testados na sua frente, com brinde e garantia da loja.
+
+Sem fila, sem correio atrasado, sem surpresa: voc&ecirc; v&ecirc; funcionando antes de levar.
+
+Chama o Noel no WhatsApp &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpn2',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <!-- N3 -->
+  <div class="section">
+    <div class="badge">Criativo N3 &middot; Carrossel &middot; 08 a 23/12</div>
+    <div class="section-title">Presentes do <em>Rei</em></div>
+    <p class="section-desc">O m&ecirc;s de brilhar o mix da loja inteira &mdash; um presente por slide, no padr&atilde;o do brandbook.</p>
+    <div class="bloco">
+      <h4>Estrutura (7 slides)</h4>
+      <div class="slide-lista">
+        <div class="slide-item"><strong>Capa:</strong> Noel da Feira + &ldquo;O PRESENTE CERTO PRA CADA UM&rdquo;</div>
+        <div class="slide-item"><strong>Pra quem vive no celular:</strong> smartphone + kit de brinde</div>
+        <div class="slide-item"><strong>Pra quem ama m&uacute;sica:</strong> caixa de som e fone</div>
+        <div class="slide-item"><strong>Pra quem &eacute; pontual:</strong> rel&oacute;gios</div>
+        <div class="slide-item"><strong>Pra quem gosta de cheiro bom:</strong> perfumes importados</div>
+        <div class="slide-item"><strong>Pra crian&ccedil;ada:</strong> tablet infantil e acess&oacute;rios</div>
+        <div class="slide-item"><strong>Final:</strong> &ldquo;N&atilde;o achou? O Noel traz do Paraguai&rdquo; + convite WhatsApp</div>
+      </div>
+    </div>
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cpn3">&#127873; Presente bom &eacute; o que a pessoa usa todo dia.
+
+Arrasta pro lado e acha o presente certo pra cada um da fam&iacute;lia &mdash; tudo testado, com brinde e garantia da loja, aqui na Feira de Barreiras.
+
+N&atilde;o achou o que procura? O Noel traz do Paraguai pra voc&ecirc;.
+
+Chama no WhatsApp e garanta antes do dia 24 &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpn3',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <!-- N4 -->
+  <div class="section">
+    <div class="badge">Criativo N4 &middot; V&iacute;deo ou arte &middot; 01 a 10/12</div>
+    <div class="section-title">Encomenda chega <em>antes do Natal</em></div>
+    <p class="section-desc">Corrida de encomendas com prazo real. <strong style="color:var(--branco)">Confirmar com o Luiz a data-limite do pedido</strong> para chegar antes do dia 24 &mdash; o criativo s&oacute; roda com essa data certa.</p>
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio (ajustar a data)</h4>
+      <div class="copia-box" id="cpn4">&#128230; O presente que n&atilde;o tem em Barreiras? O Rei traz do Paraguai.
+
+Encomendou at&eacute; [DATA-LIMITE], chega a tempo de ir pra baixo da &aacute;rvore.
+
+Voc&ecirc; pede, o Rei busca, voc&ecirc; retira na loja &mdash; na Feira, com garantia.
+
+Chama no WhatsApp e faz seu pedido &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpn4',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <!-- N5 -->
+  <div class="section">
+    <div class="badge">Criativo N5 &middot; Story &middot; 23 e 24/12</div>
+    <div class="section-title">V&eacute;spera: o Noel <em>resolve</em></div>
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cpn5">&#128680; Esqueceu o presente? Calma, o Noel da Feira resolve.
+
+Hoje a loja est&aacute; aberta at&eacute; [HOR&Aacute;RIO DA V&Eacute;SPERA] &mdash; presente testado, embrulhado e com brinde, na hora.
+
+Chama no WhatsApp que a gente j&aacute; deixa separado &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpn5',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- VIRADA -->
+  <div class="section">
+    <div class="badge ouro">Virada do Rei &middot; 26/12 a 05/01</div>
+    <div class="section-title">Criativos da <em style="color:var(--ouro)">virada</em></div>
+
+    <div class="bloco">
+      <h4>V1 &middot; V&iacute;deo &ldquo;Ano novo, celular novo&rdquo; (at&eacute; 20s)</h4>
+      <div class="fala"><div class="fala-tempo">0&ndash;4s</div><div class="fala-texto">&ldquo;Vai entrar em 2027 com esse celular travando?&rdquo;<span class="dica">Gancho direto, Luiz j&aacute; sem fantasia, com aparelho novo na m&atilde;o.</span></div></div>
+      <div class="fala"><div class="fala-tempo">4&ndash;13s</div><div class="fala-texto">&ldquo;13&ordm; na conta, dinheiro de presente na m&atilde;o... &eacute; agora: <strong>ano novo, celular novo</strong> &mdash; testado na sua frente, com brinde e garantia.&rdquo;</div></div>
+      <div class="fala"><div class="fala-tempo">13&ndash;20s</div><div class="fala-texto">&ldquo;<strong>Chama no WhatsApp</strong> e comece 2027 com aparelho novo &#128071;&rdquo;</div></div>
+      <div class="copia-box" id="cpv1" style="margin-top:14px;">&#127878; Ano novo, celular novo.
+
+13&ordm; na conta e aquele dinheiro de presente na m&atilde;o? Melhor investimento: o aparelho que voc&ecirc; usa o ano inteiro.
+
+Testado na sua frente, com kit de brinde e garantia da loja &mdash; na Feira de Barreiras.
+
+Chama no WhatsApp e comece 2027 bem acompanhado &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpv1',this)">Copiar texto</button>
+    </div>
+
+    <div class="bloco">
+      <h4>V2 &middot; Arte &ldquo;Ganhou celular no Natal?&rdquo;</h4>
+      <p style="font-size:0.86rem;color:#BBB;font-weight:300;margin-bottom:12px;">Alcance local barato para virar o p&oacute;s-Natal em fluxo de loja: pel&iacute;cula, capa e fone para os aparelhos que a cidade acabou de ganhar.</p>
+      <div class="copia-box" id="cpv2">&#128241; Ganhou celular no Natal? Parab&eacute;ns &mdash; agora protege ele.
+
+Pel&iacute;cula e capa aplicadas na hora, fones e acess&oacute;rios com o melhor pre&ccedil;o de Barreiras.
+
+Passa na loja (Feira Livre, Centro) ou chama no WhatsApp &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cpv2',this)">Copiar texto</button>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Criativos de Dezembro &mdash; Rei dos Importados &mdash; 24/11/2026</div>
+</div>
+
+<script>
+  function copiar(id, btn) {
+    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+      const o = btn.textContent; btn.textContent = 'Copiado!';
+      setTimeout(() => { btn.textContent = o; }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

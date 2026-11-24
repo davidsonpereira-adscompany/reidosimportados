@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calend&aacute;rio de Conte&uacute;do &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --amarelo:#EAB308; --ouro:#C9A24B; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--laranja);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-line{width:60px;height:2px;background:var(--laranja);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:660px;margin:0 auto;line-height:1.7}
+  .container{max-width:960px;margin:0 auto;padding:0 32px}
+  .section{padding:40px 0 8px}
+  .section-tag{font-size:0.6rem;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--laranja);margin-bottom:18px;text-align:center}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:760px){.grid{grid-template-columns:1fr}}
+  .doc-card{background:var(--card);border:1px solid var(--borda);border-radius:16px;padding:26px;text-decoration:none;color:inherit;display:block;transition:all 0.3s}
+  .doc-card:hover{border-color:rgba(255,92,0,0.4);transform:translateY(-2px)}
+  .doc-card.destaque{border-color:rgba(201,162,75,0.45)}
+  .doc-card.off{opacity:0.45;pointer-events:none}
+  .doc-tag{font-size:0.6rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--laranja);margin-bottom:10px}
+  .doc-card.destaque .doc-tag{color:var(--ouro)}
+  .doc-card h3{font-family:var(--serif);font-size:1.2rem;font-weight:400;margin-bottom:8px}
+  .doc-card h3 em{font-style:italic;color:var(--laranja)}
+  .doc-card.destaque h3 em{color:var(--ouro)}
+  .doc-card p{font-size:0.84rem;color:var(--claro);font-weight:300;line-height:1.6;margin-bottom:16px}
+  .status{display:inline-block;font-size:0.62rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:5px 13px;border-radius:13px}
+  .st-ok{background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3)}
+  .st-brev{background:rgba(234,179,8,0.08);color:var(--amarelo);border:1px solid rgba(234,179,8,0.25)}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="../../index.html" class="btn-voltar">&larr; Voltar &agrave; Central</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Sub-central &middot; M&ecirc;s a m&ecirc;s</div>
+  <h1>Calend&aacute;rio de <em>Conte&uacute;do</em></h1>
+  <div class="hero-line"></div>
+  <p>Tudo que o Rei dos Importados publica no Instagram de forma org&acirc;nica: Reels no ritmo 3-1-1 e Stories diários, com roteiro e gancho prontos &mdash; organizados por m&ecirc;s.</p>
+</div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="section-tag">Base &middot; leia primeiro</div>
+    <div class="grid">
+      <a href="estrategia.html" class="doc-card destaque" style="grid-column:1/-1;">
+        <div class="doc-tag">A base de todos os meses</div>
+        <h3>A estrat&eacute;gia por tr&aacute;s do <em>conte&uacute;do</em></h3>
+        <p>Por que a cada 5 Reels s&atilde;o 3 de alcance, 1 de confian&ccedil;a e 1 de venda; a espinha semanal dos Stories; as regras de grava&ccedil;&atilde;o e de linguagem. Quem entende isso grava melhor e vende mais.</p>
+        <span class="status st-ok">Leitura essencial</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-tag">Novembro 2026</div>
+    <div class="grid">
+      <a href="novembro.html" class="doc-card">
+        <div class="doc-tag">24 a 30/11 &middot; dia a dia</div>
+        <h3>A semana da <em>Black</em></h3>
+        <p>Semana de campanha: arruma&ccedil;&atilde;o do perfil, Reels da Black e os Stories de cada dia, do aquecimento ao teaser do Noel.</p>
+        <span class="status st-ok">Em execu&ccedil;&atilde;o</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-tag">Dezembro 2026</div>
+    <div class="grid">
+      <a href="dezembro.html" class="doc-card">
+        <div class="doc-tag">5 semanas &middot; 22 conte&uacute;dos</div>
+        <h3>O m&ecirc;s do <em>Noel da Feira</em></h3>
+        <p>Semana a semana no ritmo 3-1-1: a chegada do Noel, a corrida das encomendas, o pico do Natal, a v&eacute;spera e o &ldquo;ano novo, celular novo&rdquo;.</p>
+        <span class="status st-ok">Pronto para gravar</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-tag">Pr&oacute;ximos meses</div>
+    <div class="grid">
+      <div class="doc-card off">
+        <div class="doc-tag">Janeiro 2027</div>
+        <h3>Calend&aacute;rio de <em>Janeiro</em></h3>
+        <p>Montado no fim de dezembro, com o que os n&uacute;meros do m&ecirc;s ensinarem.</p>
+        <span class="status st-brev">Em breve</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Calend&aacute;rio de Conte&uacute;do &mdash; Rei dos Importados</div>
+</div>
+
+</body>
+</html>

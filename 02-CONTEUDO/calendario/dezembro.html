@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calend&aacute;rio Dezembro &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --ouro:#C9A24B; --azul:#3B82F6; --natal:#E74C3C; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--natal);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--natal)}
+  .hero-line{width:60px;height:2px;background:var(--natal);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:680px;margin:0 auto;line-height:1.7}
+  .container{max-width:900px;margin:0 auto;padding:0 32px}
+  .section{padding:40px 0 12px}
+  .sem-header{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:28px 0 16px}
+  .sem-titulo{font-family:var(--serif);font-size:1.3rem}
+  .sem-titulo em{font-style:italic;color:var(--natal)}
+  .sem-tag{font-size:0.62rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--natal);background:rgba(231,76,60,0.08);border:1px solid rgba(231,76,60,0.25);padding:5px 13px;border-radius:13px}
+  .slot{background:var(--card);border:1px solid var(--borda);border-radius:12px;padding:18px 22px;margin-bottom:10px;display:flex;gap:16px;align-items:flex-start}
+  @media(max-width:640px){.slot{flex-direction:column;gap:8px}}
+  .chip{flex-shrink:0;font-size:0.6rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:5px 12px;border-radius:12px;margin-top:2px;width:76px;text-align:center}
+  .chip-topo{background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3)}
+  .chip-meio{background:rgba(59,130,246,0.1);color:var(--azul);border:1px solid rgba(59,130,246,0.3)}
+  .chip-fundo{background:rgba(255,92,0,0.1);color:var(--laranja);border:1px solid rgba(255,92,0,0.3)}
+  .slot-corpo{flex:1}
+  .slot-corpo p{font-size:0.86rem;color:#CCC;font-weight:300;line-height:1.65}
+  .slot-corpo p strong{color:var(--branco);font-weight:600}
+  .slot-corpo .gancho{display:block;background:#0D0D0D;border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;padding:8px 13px;margin-top:8px;font-size:0.84rem;color:var(--branco)}
+  .st-box{background:#101010;border:1px dashed rgba(255,255,255,0.12);border-radius:12px;padding:16px 20px;margin:12px 0 4px;font-size:0.82rem;color:#BBB;font-weight:300;line-height:1.7}
+  .st-box strong{color:var(--branco);font-weight:600}
+  .nota{background:var(--card);border:1px solid rgba(201,162,75,0.35);border-radius:14px;padding:20px 24px;margin:16px 0;font-size:0.86rem;color:#DDD;font-weight:300;line-height:1.7}
+  .nota strong{color:var(--ouro);font-weight:600}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="index.html" class="btn-voltar">&larr; Calend&aacute;rio de Conte&uacute;do</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Calend&aacute;rio de Conte&uacute;do &middot; Dezembro 2026</div>
+  <h1>O m&ecirc;s do <em>Noel da Feira</em></h1>
+  <div class="hero-line"></div>
+  <p>Cinco Reels por semana no ritmo 3-1-1 (TOPO &rarr; TOPO &rarr; MEIO &rarr; TOPO &rarr; FUNDO), stories todos os dias seguindo a espinha semanal da estrat&eacute;gia &mdash; e o Noel da Feira costurando o m&ecirc;s inteiro. Grave a semana toda de uma vez, num lote de 1h30.</p>
+</div>
+
+<div class="container">
+  <div class="section">
+
+    <div class="nota"><strong>A sess&atilde;o do Noel vem primeiro:</strong> at&eacute; 30/11, fazer a sess&atilde;o de fotos e v&iacute;deos do Luiz vestido de Papai Noel com a coroa (lista de takes na p&aacute;gina de criativos de dezembro). Ela abastece os an&uacute;ncios E v&aacute;rios conte&uacute;dos deste calend&aacute;rio.</div>
+
+    <!-- SEMANA 1 -->
+    <div class="sem-header"><span class="sem-titulo">Semana 1 &middot; <em>a chegada do Noel</em></span><span class="sem-tag">01 a 07/12</span></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>A revela&ccedil;&atilde;o do Noel da Feira</strong> &mdash; v&iacute;deo curto: a porta da loja abre e o Noel de coroa aparece de bra&ccedil;os cruzados. Corte seco, m&uacute;sica natalina alta.</p><span class="gancho">&ldquo;Esse ano o Noel n&atilde;o vem do Polo Norte.&rdquo;</span></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>POV:</strong> &ldquo;POV: voc&ecirc; pediu o presente pro Noel errado a vida inteira&rdquo; &mdash; crian&ccedil;a/cliente pedindo ao Noel da Feira, e ele entregando na hora, testado.</p></div></div>
+    <div class="slot"><span class="chip chip-meio">Meio</span><div class="slot-corpo"><p><strong>Bastidor:</strong> os presentes sendo preparados &mdash; aparelhos testados um a um e embrulhados no balc&atilde;o. Capricho &eacute; prova.</p><span class="gancho">&ldquo;&Eacute; assim que um presente sai do Rei.&rdquo;</span></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Novelinha:</strong> cliente &ldquo;vou comprar online que chega antes do Natal&rdquo; &times; Noel da Feira mostrando o aparelho na m&atilde;o: &ldquo;antes? Aqui &eacute; AGORA, testado&rdquo;.</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>Oferta direta do Noel:</strong> o v&iacute;deo-an&uacute;ncio N2 em vers&atilde;o org&acirc;nica &mdash; presentes pra toda fam&iacute;lia, chama no WhatsApp.</p></div></div>
+    <div class="st-box"><strong>Stories da semana:</strong> segue a espinha (novidades segunda, bancada ter&ccedil;a, enquete quarta &ldquo;quem &eacute; mais dif&iacute;cil de presentear: pai ou m&atilde;e?&rdquo;, prova quinta, oferta sexta com link, feira viva s&aacute;bado) &mdash; com o Noel aparecendo pelo menos dia sim, dia n&atilde;o.</div>
+
+    <!-- SEMANA 2 -->
+    <div class="sem-header"><span class="sem-titulo">Semana 2 &middot; <em>a corrida das encomendas</em></span><span class="sem-tag">08 a 14/12</span></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Frase na tela</strong> (Noel atendendo ao fundo): &ldquo;Dia 24, 19h: &lsquo;ser&aacute; que ainda acho presente?&rsquo; &mdash; n&atilde;o seja essa pessoa.&rdquo;</p></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Flagrante:</strong> a cena de dezembro &mdash; cliente que entra &ldquo;s&oacute; pra olhar&rdquo; e sai com tr&ecirc;s presentes embrulhados.</p></div></div>
+    <div class="slot"><span class="chip chip-meio">Meio</span><div class="slot-corpo"><p><strong>Respondendo pergunta real:</strong> &ldquo;como funciona a encomenda do Paraguai?&rdquo; &mdash; Luiz explica em 30s: pediu, o Rei busca, voc&ecirc; retira na loja com garantia.</p><span class="gancho">&ldquo;Essa semana me perguntaram: esse neg&oacute;cio de encomenda &eacute; seguro?&rdquo;</span></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Trend natalina:</strong> &aacute;udio em alta no momento, vestido com o Noel da Feira (escolher o &aacute;udio na pr&oacute;pria semana &mdash; trend s&oacute; vale fresca).</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>Prazo das encomendas:</strong> &ldquo;encomendou at&eacute; [DATA], chega antes do Natal&rdquo; &mdash; urg&ecirc;ncia verdadeira com a data confirmada pelo Luiz.</p></div></div>
+    <div class="st-box"><strong>Stories da semana:</strong> espinha normal + contagem regressiva do prazo de encomendas na quinta e na sexta; caixinha de quarta: &ldquo;qual presente voc&ecirc; quer que o Rei traga do Paraguai?&rdquo;.</div>
+
+    <!-- SEMANA 3 -->
+    <div class="sem-header"><span class="sem-titulo">Semana 3 &middot; <em>o pico do Natal</em></span><span class="sem-tag">15 a 21/12</span></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Frase na tela:</strong> &ldquo;Presente bom n&atilde;o &eacute; o mais caro. &Eacute; o que a pessoa usa TODO dia.&rdquo; &mdash; e o feed de produtos rodando atr&aacute;s.</p></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Novelinha:</strong> marido desesperado &ldquo;esqueci o presente dela&rdquo; &times; Noel da Feira salvando com perfume importado + embrulho na hora.</p></div></div>
+    <div class="slot"><span class="chip chip-meio">Meio</span><div class="slot-corpo"><p><strong>Antes e depois da assist&ecirc;ncia:</strong> &ldquo;deixa o celular pronto pro Natal&rdquo; &mdash; tela trincada de manh&atilde;, aparelho novo de tarde, cliente buscando.</p></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Day in the life do Noel:</strong> um dia da semana mais cheia do ano em cortes r&aacute;pidos &mdash; abrir a loja, atender, embrulhar, entregar.</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>Carrossel Presentes do Rei</strong> (criativo N3 em org&acirc;nico): o presente certo pra cada um, com convite pro WhatsApp.</p></div></div>
+    <div class="st-box"><strong>Stories da semana:</strong> intensivo de prova social &mdash; todo presente entregue vira story (com autoriza&ccedil;&atilde;o); oferta com link na sexta e TAMB&Eacute;M na segunda (semana de pico permite dois stories de oferta).</div>
+
+    <!-- SEMANA 4 -->
+    <div class="sem-header"><span class="sem-titulo">Semana 4 &middot; <em>v&eacute;spera e virada</em></span><span class="sem-tag">22 a 28/12</span></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Frase na tela (22/12):</strong> &ldquo;Faltam 2 dias. Se o presente ainda n&atilde;o existe, o problema j&aacute; existe.&rdquo;</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>V&eacute;spera (23&ndash;24/12):</strong> &ldquo;esqueceu? O Noel resolve HOJE&rdquo; &mdash; v&iacute;deo do Noel embrulhando na hora + hor&aacute;rio da v&eacute;spera.</p><span class="gancho">&ldquo;Pra voc&ecirc; que deixou pra &uacute;ltima hora (de novo).&rdquo;</span></div></div>
+    <div class="slot"><span class="chip chip-meio">Meio</span><div class="slot-corpo"><p><strong>26/12 &mdash; despedida do Noel:</strong> Noel tirando a barba, vira o Luiz: &ldquo;o Noel foi, o Rei ficou &mdash; e janeiro vem com novidade&rdquo;. Humaniza e fecha o personagem com chave de ouro.</p></div></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Flagrante p&oacute;s-Natal:</strong> &ldquo;todo mundo que ganhou celular no Natal aparecendo pra comprar pel&iacute;cula e capa&rdquo; &mdash; a fila do kit prote&ccedil;&atilde;o.</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>Kit prote&ccedil;&atilde;o do presente:</strong> &ldquo;ganhou celular? Protege ele hoje &mdash; pel&iacute;cula e capa aplicadas na hora.&rdquo;</p></div></div>
+    <div class="st-box"><strong>Stories da semana:</strong> 23&ndash;24 cobertura da correria + hor&aacute;rio da v&eacute;spera de hora em hora; 25 s&oacute; um story de Feliz Natal (sem venda); 26&ndash;28 prova social dos presentes entregues + kit prote&ccedil;&atilde;o com link.</div>
+
+    <!-- SEMANA 5 -->
+    <div class="sem-header"><span class="sem-titulo">Semana 5 &middot; <em>ano novo, celular novo</em></span><span class="sem-tag">29 a 31/12</span></div>
+    <div class="slot"><span class="chip chip-topo">Topo</span><div class="slot-corpo"><p><strong>Frase na tela:</strong> &ldquo;Novo ano com celular travando n&atilde;o &eacute; vida nova. &Eacute; o mesmo ano com roupa nova.&rdquo;</p></div></div>
+    <div class="slot"><span class="chip chip-fundo">Fundo</span><div class="slot-corpo"><p><strong>Ano novo, celular novo</strong> (criativo V1 em org&acirc;nico): 13&ordm; + dinheiro de presente = aparelho novo testado na frente.</p></div></div>
+    <div class="st-box"><strong>Stories:</strong> retrospectiva do ano da loja (os melhores momentos e agradecimentos) no dia 31 + &ldquo;at&eacute; ano que vem&rdquo; &mdash; e dia 01/01 s&oacute; um story de Feliz Ano Novo.</div>
+
+    <div class="nota"><strong>Lembrete do m&ecirc;s:</strong> todo story relevante vai para o destaque certo no mesmo dia (Celulares, Assist&ecirc;ncia, Encomendas, Clientes). E o que performar melhor nas semanas 1 e 2 define o peso dos formatos das semanas 3 e 4 &mdash; o calend&aacute;rio &eacute; vivo.</div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Calend&aacute;rio de Conte&uacute;do &middot; Dezembro &mdash; Rei dos Importados</div>
+</div>
+
+</body>
+</html>

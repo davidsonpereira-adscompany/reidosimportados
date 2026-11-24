@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calend&aacute;rio Novembro &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --ouro:#C9A24B; --azul:#3B82F6; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--laranja);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-line{width:60px;height:2px;background:var(--laranja);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:660px;margin:0 auto;line-height:1.7}
+  .container{max-width:900px;margin:0 auto;padding:0 32px}
+  .section{padding:40px 0 12px}
+  .dia{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:22px 26px;margin-bottom:14px}
+  .dia-topo{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+  .dia-data{font-family:var(--serif);font-size:1.05rem;color:var(--branco)}
+  .chip{font-size:0.6rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;padding:4px 12px;border-radius:12px}
+  .chip-topo{background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3)}
+  .chip-meio{background:rgba(59,130,246,0.1);color:var(--azul);border:1px solid rgba(59,130,246,0.3)}
+  .chip-fundo{background:rgba(255,92,0,0.1);color:var(--laranja);border:1px solid rgba(255,92,0,0.3)}
+  .chip-extra{background:rgba(201,162,75,0.1);color:var(--ouro);border:1px solid rgba(201,162,75,0.3)}
+  .dia p{font-size:0.87rem;color:#CCC;font-weight:300;line-height:1.7}
+  .dia p strong{color:var(--branco);font-weight:600}
+  .dia .gancho{display:block;background:#0D0D0D;border-left:3px solid var(--ouro);border-radius:0 8px 8px 0;padding:10px 14px;margin:10px 0 6px;font-size:0.86rem;color:var(--branco);font-weight:400}
+  .dia .st{font-size:0.8rem;color:var(--claro);font-weight:300;margin-top:8px;padding-top:8px;border-top:1px dashed rgba(255,255,255,0.06)}
+  .dia .st strong{color:#BBB;font-weight:600}
+  .nota{background:var(--card);border:1px solid rgba(201,162,75,0.35);border-radius:14px;padding:20px 24px;margin:16px 0;font-size:0.86rem;color:#DDD;font-weight:300;line-height:1.7}
+  .nota strong{color:var(--ouro);font-weight:600}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="index.html" class="btn-voltar">&larr; Calend&aacute;rio de Conte&uacute;do</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Calend&aacute;rio de Conte&uacute;do &middot; 24 a 30/11</div>
+  <h1>A semana da <em>Black</em></h1>
+  <div class="hero-line"></div>
+  <p>Semana at&iacute;pica, de campanha: o conte&uacute;do org&acirc;nico trabalha junto com os an&uacute;ncios da Black do Rei. Por isso, nesta semana (e s&oacute; nela) a propor&ccedil;&atilde;o tem mais fundo que o normal &mdash; em dezembro o 3-1-1 volta ao ritmo padr&atilde;o.</p>
+</div>
+
+<div class="container">
+  <div class="section">
+
+    <div class="nota"><strong>Antes de postar qualquer coisa:</strong> aplicar o nome e a bio novos, criar os 6 destaques com as capas e publicar os 3 fixados (o v&iacute;deo Quem Somos abre a semana). Com a casa arrumada, todo mundo que os an&uacute;ncios trouxerem encontra um perfil &agrave; altura.</p></div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Segunda &middot; 24/11</span><span class="chip chip-extra">Arruma&ccedil;&atilde;o + Fixado</span></div>
+      <p><strong>Publicar o v&iacute;deo &ldquo;Quem Somos&rdquo;</strong> (roteiro j&aacute; entregue) e fixar. Aplicar bio nova, nome novo e os 6 destaques.</p>
+      <p class="st"><strong>Stories:</strong> bastidor da arruma&ccedil;&atilde;o (&ldquo;semana grande chegando...&rdquo;) + story de expectativa: &ldquo;amanh&atilde; come&ccedil;a a Black do Rei &#128081;&rdquo; com enquete &ldquo;t&aacute; esperando?&rdquo;.</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Ter&ccedil;a &middot; 25/11</span><span class="chip chip-fundo">Reel Fundo</span></div>
+      <p><strong>An&uacute;ncio da Black em vers&atilde;o org&acirc;nica:</strong> o mesmo v&iacute;deo &ldquo;A Black do Rei come&ccedil;ou&rdquo; dos an&uacute;ncios, publicado no feed.</p>
+      <span class="gancho">&ldquo;Pode procurar: &eacute; a &uacute;nica Black de Barreiras onde voc&ecirc; v&ecirc; o aparelho funcionando antes de pagar.&rdquo;</span>
+      <p class="st"><strong>Stories:</strong> arte da Black com link do WhatsApp + repost do Reel + um produto em oferta mostrado na m&atilde;o (sem falar pre&ccedil;o: &ldquo;condi&ccedil;&atilde;o especial, chama no WhatsApp&rdquo;).</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Quarta &middot; 26/11</span><span class="chip chip-topo">Reel Topo</span></div>
+      <p><strong>Novelinha:</strong> Luiz faz os dois pap&eacute;is &mdash; cliente desconfiado da Black (&ldquo;aumentam tudo antes pra fingir desconto&rdquo;) &times; vendedor que mostra o aparelho ligado, o brinde e a garantia: &ldquo;aqui a Black &eacute; na sua frente&rdquo;.</p>
+      <span class="gancho">&ldquo;Black Friday &eacute; tudo golpe...&rdquo; &mdash; ser&aacute;?</span>
+      <p class="st"><strong>Stories:</strong> caixinha &ldquo;qual modelo voc&ecirc; quer na Black?&rdquo; (as respostas viram lista de ofertas) + bancada em a&ccedil;&atilde;o.</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Quinta &middot; 27/11</span><span class="chip chip-fundo">Reel Fundo &middot; dia D</span></div>
+      <p><strong>&Eacute; sexta de Black amanh&atilde;? N&atilde;o: aqui a Black j&aacute; est&aacute; valendo.</strong> V&iacute;deo curto do movimento da loja + os kits de brinde na mesa. Chamado &uacute;nico: WhatsApp.</p>
+      <span class="gancho">&ldquo;Enquanto todo mundo espera a sexta, a Feira j&aacute; t&aacute; levando.&rdquo;</span>
+      <p class="st"><strong>Stories (dia intensivo):</strong> manh&atilde; &mdash; arte Black com link; meio-dia &mdash; cliente retirando aparelho; tarde &mdash; &ldquo;&uacute;ltimas horas do dia&rdquo;; noite &mdash; prints de agradecimento do dia.</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Sexta &middot; 28/11</span><span class="chip chip-meio">Reel Meio</span></div>
+      <p><strong>Bastidor do dia mais cheio do ano:</strong> cortes r&aacute;pidos da sexta de Black &mdash; gente na loja, aparelho sendo testado, brinde sendo entregue. Prova social em movimento.</p>
+      <span class="gancho">&ldquo;Como foi a sexta de Black na &uacute;nica loja que testa na sua frente.&rdquo;</span>
+      <p class="st"><strong>Stories:</strong> cobertura ao vivo do dia + enquete &ldquo;conseguiu garantir o seu?&rdquo;.</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">S&aacute;bado &middot; 29/11</span><span class="chip chip-fundo">Reel Fundo</span></div>
+      <p><strong>&Uacute;ltima chamada</strong> (mesmo v&iacute;deo do an&uacute;ncio): condi&ccedil;&otilde;es especiais acabam domingo, segunda volta ao normal.</p>
+      <span class="gancho">&ldquo;A Black acabou por a&iacute;. Aqui no Rei, vai at&eacute; domingo.&rdquo;</span>
+      <p class="st"><strong>Stories:</strong> contagem regressiva (figurinha de contagem) + repost do Reel + &uacute;ltimo produto dispon&iacute;vel em destaque.</p>
+    </div>
+
+    <div class="dia">
+      <div class="dia-topo"><span class="dia-data">Domingo &middot; 30/11</span><span class="chip chip-extra">S&oacute; Stories</span></div>
+      <p><strong>Fechamento da Black e ponte para dezembro.</strong> Sem Reel hoje &mdash; o perfil descansa para a virada de campanha.</p>
+      <p class="st"><strong>Stories:</strong> &ldquo;&uacute;ltimas horas da Black&rdquo; de manh&atilde; + agradecimento pela semana &agrave; noite com os melhores prints + mist&eacute;rio: &ldquo;amanh&atilde; chega algu&eacute;m especial na loja... &#127877;&#128081;&rdquo; (teaser do Noel da Feira).</p>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Calend&aacute;rio de Conte&uacute;do &middot; Novembro &mdash; Rei dos Importados</div>
+</div>
+
+</body>
+</html>

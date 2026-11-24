@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Criativos Black &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --ouro:#C9A24B; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--laranja);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-line{width:60px;height:2px;background:var(--laranja);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:640px;margin:0 auto;line-height:1.7}
+  .container{max-width:900px;margin:0 auto;padding:0 32px}
+  .section{padding:44px 0 12px}
+  .badge{display:inline-flex;gap:10px;font-size:0.62rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--laranja);background:rgba(255,92,0,0.08);border:1px solid rgba(255,92,0,0.2);padding:6px 14px;border-radius:14px;margin-bottom:12px}
+  .section-title{font-family:var(--serif);font-size:1.4rem;font-weight:400}
+  .section-title em{font-style:italic;color:var(--laranja)}
+  .section-desc{font-size:0.88rem;color:var(--claro);font-weight:300;margin-top:8px;max-width:700px}
+  .bloco{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:24px 26px;margin:16px 0}
+  .bloco h4{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--laranja);margin-bottom:14px}
+  .bloco.regra-ouro{border-color:rgba(201,162,75,0.4)}
+  .bloco.regra-ouro h4{color:var(--ouro)}
+  .bloco.regra-ouro p{font-size:0.9rem;color:#DDD;font-weight:300;line-height:1.75}
+  .bloco.regra-ouro p strong{color:var(--ouro);font-weight:600}
+  .fala{display:flex;gap:16px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .fala:last-child{border-bottom:none}
+  .fala-tempo{flex-shrink:0;width:76px;font-size:0.68rem;font-weight:700;letter-spacing:0.08em;color:var(--ouro);padding-top:3px}
+  .fala-texto{font-size:0.89rem;color:#DDD;font-weight:300;line-height:1.65}
+  .fala-texto strong{color:var(--branco);font-weight:600}
+  .fala-texto .dica{display:block;font-size:0.76rem;color:var(--claro);margin-top:4px;font-style:italic}
+  .copia-box{background:#0D0D0D;border:1px dashed rgba(201,162,75,0.35);border-radius:10px;padding:16px 18px;font-size:0.87rem;color:#DDD;font-weight:300;line-height:1.75;white-space:pre-line}
+  .copy-btn{margin-top:12px;display:inline-block;padding:9px 20px;font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;background:var(--laranja);color:#0A0A0C;border:none;border-radius:14px;cursor:pointer;transition:opacity 0.2s}
+  .copy-btn:hover{opacity:0.85}
+  .arte-wrap{display:grid;grid-template-columns:280px 1fr;gap:22px;align-items:start}
+  @media(max-width:720px){.arte-wrap{grid-template-columns:1fr}}
+  .arte-img{width:100%;border-radius:10px;border:1px solid var(--medio)}
+  .btn-baixar{display:inline-block;margin-top:10px;font-size:0.64rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#0A0A0C!important;background:var(--ouro);padding:7px 16px;border-radius:14px;text-decoration:none}
+  .lista{list-style:none}
+  .lista li{font-size:0.86rem;color:#BBB;font-weight:300;padding:7px 0 7px 24px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04)}
+  .lista li:last-child{border-bottom:none}
+  .lista li::before{content:'✓';position:absolute;left:0;color:var(--verde);font-weight:700}
+  .lista li strong{color:var(--branco);font-weight:600}
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,92,0,0.15),transparent);margin:36px 0 0}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}.fala{flex-direction:column;gap:4px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="index.html" class="btn-voltar">&larr; Criativos de Tr&aacute;fego</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Criativos de Tr&aacute;fego &middot; Novembro 2026</div>
+  <h1>Black do <em>Rei</em></h1>
+  <div class="hero-line"></div>
+  <p>Os an&uacute;ncios da semana da Black Friday (24 a 30/11): dois v&iacute;deos para o Luiz gravar e duas artes prontas &mdash; todos sem pre&ccedil;o, com a condi&ccedil;&atilde;o especial revelada na conversa do WhatsApp.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <div class="section">
+    <div class="bloco regra-ouro">
+      <h4>A regra de ouro desta campanha</h4>
+      <p><strong>Nenhum an&uacute;ncio mostra pre&ccedil;o.</strong> O que o an&uacute;ncio vende &eacute; a exist&ecirc;ncia de <strong>condi&ccedil;&otilde;es especiais que s&oacute; valem nesta semana de Black</strong> &mdash; quem quiser saber o valor, chama no WhatsApp. Isso multiplica as conversas (todo mundo pergunta), d&aacute; liberdade para o Luiz negociar no balc&atilde;o e evita guerra de pre&ccedil;o p&uacute;blica com concorrente. A urg&ecirc;ncia &eacute; verdadeira: acabou a semana, acabou a condi&ccedil;&atilde;o.</p>
+    </div>
+  </div>
+
+  <!-- CRIATIVO 1 -->
+  <div class="section">
+    <div class="badge">Criativo 1 &middot; V&iacute;deo &middot; principal da semana</div>
+    <div class="section-title">&ldquo;A Black do Rei <em>come&ccedil;ou</em>&rdquo;</div>
+    <p class="section-desc">O Luiz, olho na c&acirc;mera, dentro da loja. &Eacute; o an&uacute;ncio mais importante da semana &mdash; gravar hoje.</p>
+
+    <div class="bloco">
+      <h4>Roteiro fala a fala (at&eacute; 30s)</h4>
+      <div class="fala"><div class="fala-tempo">0&ndash;4s</div><div class="fala-texto">&ldquo;Pode procurar: &eacute; a <strong>&uacute;nica Black de Barreiras</strong> onde voc&ecirc; v&ecirc; o aparelho funcionando antes de pagar.&rdquo;<span class="dica">Gancho com aparelho ligado na m&atilde;o.</span></div></div>
+      <div class="fala"><div class="fala-tempo">4&ndash;14s</div><div class="fala-texto">&ldquo;Aqui no <strong>Rei dos Importados</strong>, na Feira, a semana &eacute; de Black: <strong>condi&ccedil;&otilde;es especiais em celulares, acess&oacute;rios e importados</strong> que s&oacute; valem at&eacute; domingo.&rdquo;<span class="dica">Mostra a loja, vitrines, movimento.</span></div></div>
+      <div class="fala"><div class="fala-tempo">14&ndash;22s</div><div class="fala-texto">&ldquo;E continua tudo igual: <strong>testado na sua frente, com brinde e garantia da loja</strong>. Black de verdade, sem pegadinha.&rdquo;<span class="dica">Kit de brinde em cima do balc&atilde;o.</span></div></div>
+      <div class="fala"><div class="fala-tempo">22&ndash;30s</div><div class="fala-texto">&ldquo;<strong>Chama no WhatsApp agora</strong> e pergunta a condi&ccedil;&atilde;o do modelo que voc&ecirc; quer &mdash; s&oacute; nesta semana.&rdquo;<span class="dica">Aponta para baixo, sorri, corta.</span></div></div>
+    </div>
+
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cp1">&#128081; A BLACK DO REI come&ccedil;ou.
+
+Condi&ccedil;&otilde;es especiais em celulares, acess&oacute;rios e importados &mdash; s&oacute; at&eacute; domingo.
+
+&#9989; Aparelho testado na sua frente
+&#9989; Kit de prote&ccedil;&atilde;o de brinde
+&#9989; Garantia da loja, na Feira de Barreiras
+
+Chama no WhatsApp e pergunta a condi&ccedil;&atilde;o do seu modelo &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cp1',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CRIATIVO 2 -->
+  <div class="section">
+    <div class="badge">Criativo 2 &middot; Arte de feed</div>
+    <div class="section-title">Arte <em>Black do Rei</em></div>
+    <div class="bloco">
+      <div class="arte-wrap">
+        <div>
+          <img class="arte-img" src="artes/black-feed.png" alt="Arte Black do Rei para feed">
+          <a class="btn-baixar" href="artes/black-feed.png" download="black-do-rei-feed.png">Baixar arte</a>
+        </div>
+        <div>
+          <h4>Como usar</h4>
+          <ul class="lista">
+            <li>Roda como an&uacute;ncio de <strong>24 a 29/11</strong> junto com o v&iacute;deo (a Meta mostra mais o que performar melhor)</li>
+            <li>Usa o <strong>mesmo texto do Criativo 1</strong></li>
+            <li>Tamb&eacute;m vale como post org&acirc;nico de feed na ter&ccedil;a (25/11)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRIATIVO 3 -->
+  <div class="section">
+    <div class="badge">Criativo 3 &middot; Arte de story</div>
+    <div class="section-title">Story <em>Condi&ccedil;&otilde;es Especiais</em></div>
+    <div class="bloco">
+      <div class="arte-wrap">
+        <div>
+          <img class="arte-img" src="artes/black-story.png" alt="Arte Black do Rei para story">
+          <a class="btn-baixar" href="artes/black-story.png" download="black-do-rei-story.png">Baixar arte</a>
+        </div>
+        <div>
+          <h4>Como usar</h4>
+          <ul class="lista">
+            <li>An&uacute;ncio de story com bot&atilde;o direto para o WhatsApp</li>
+            <li>No org&acirc;nico: postar como story <strong>todos os dias da semana</strong> com a figurinha de link</li>
+            <li>No dia 27 (sexta da Black), postar de manh&atilde;, meio-dia e fim de tarde</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CRIATIVO 4 -->
+  <div class="section">
+    <div class="badge">Criativo 4 &middot; V&iacute;deo &middot; entra dia 28/11</div>
+    <div class="section-title">&ldquo;&Uacute;ltima <em>chamada</em>&rdquo;</div>
+    <p class="section-desc">Troca o Criativo 1 no s&aacute;bado. Urg&ecirc;ncia real de fim de semana.</p>
+
+    <div class="bloco">
+      <h4>Roteiro fala a fala (at&eacute; 20s)</h4>
+      <div class="fala"><div class="fala-tempo">0&ndash;4s</div><div class="fala-texto">&ldquo;A Black acabou por a&iacute;. <strong>Aqui no Rei, vai at&eacute; domingo.</strong>&rdquo;<span class="dica">Gancho direto, na porta da loja.</span></div></div>
+      <div class="fala"><div class="fala-tempo">4&ndash;13s</div><div class="fala-texto">&ldquo;&Uacute;ltimos dias das <strong>condi&ccedil;&otilde;es especiais</strong> em celulares, acess&oacute;rios e importados &mdash; enquanto durar o estoque.&rdquo;</div></div>
+      <div class="fala"><div class="fala-tempo">13&ndash;20s</div><div class="fala-texto">&ldquo;Segunda-feira o pre&ccedil;o volta ao normal. <strong>Chama no WhatsApp agora</strong> &#128071;&rdquo;</div></div>
+    </div>
+
+    <div class="bloco">
+      <h4>Texto do an&uacute;ncio</h4>
+      <div class="copia-box" id="cp2">&#9203; &Uacute;LTIMA CHAMADA da Black do Rei.
+
+As condi&ccedil;&otilde;es especiais acabam domingo &mdash; e o estoque n&atilde;o espera.
+
+Celulares, acess&oacute;rios e importados testados na sua frente, com brinde e garantia da loja.
+
+Chama no WhatsApp antes que acabe &#128071;</div>
+      <button class="copy-btn" onclick="copiar('cp2',this)">Copiar texto</button>
+    </div>
+  </div>
+
+  <!-- OPERACAO -->
+  <div class="section">
+    <div class="badge">Opera&ccedil;&atilde;o da semana</div>
+    <div class="bloco">
+      <ul class="lista">
+        <li><strong>Destino de tudo:</strong> WhatsApp, com mensagem j&aacute; preenchida: &ldquo;&#128081; Quero saber as condi&ccedil;&otilde;es da Black do Rei&rdquo;</li>
+        <li><strong>24/11 (hoje):</strong> Luiz grava o Criativo 1 e manda; an&uacute;ncios entram no ar</li>
+        <li><strong>28/11:</strong> entra a &Uacute;ltima Chamada no lugar do v&iacute;deo principal</li>
+        <li><strong>30/11 &agrave; noite:</strong> tudo da Black sai do ar &mdash; dia 01/12 come&ccedil;a o Noel da Feira</li>
+        <li><strong>Resposta r&aacute;pida:</strong> na semana de Black, WhatsApp respondido em minutos &eacute; o que converte &mdash; combinar com o Luiz quem responde</li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Criativos Black do Rei &mdash; Rei dos Importados &mdash; 24/11/2026</div>
+</div>
+
+<script>
+  function copiar(id, btn) {
+    navigator.clipboard.writeText(document.getElementById(id).innerText).then(() => {
+      const o = btn.textContent; btn.textContent = 'Copiado!';
+      setTimeout(() => { btn.textContent = o; }, 2000);
+    });
+  }
+</script>
+</body>
+</html>

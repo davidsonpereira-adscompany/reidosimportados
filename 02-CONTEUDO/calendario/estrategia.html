@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrat&eacute;gia de Conte&uacute;do &mdash; Rei dos Importados | ADS Company</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --laranja:#FF5C00; --preto:#060606; --card:#141414; --medio:#2A2A2A; --claro:#888; --borda:rgba(255,255,255,0.06); --branco:#F5F5F5; --verde:#22C55E; --ouro:#C9A24B; --azul:#3B82F6; --serif:'Playfair Display',Georgia,serif; --sans:'Inter',-apple-system,sans-serif; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--preto);color:var(--branco);font-family:var(--sans);font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .top-bar{background:rgba(10,10,10,0.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--borda);padding:14px 32px;position:sticky;top:0;z-index:100;display:flex;align-items:center;justify-content:space-between}
+  .top-bar-name{font-family:var(--serif);font-size:0.95rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.8)}
+  .top-bar-name em{font-style:italic;color:var(--laranja)}
+  .btn-voltar{display:inline-flex;align-items:center;gap:8px;font-size:0.72rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--laranja);text-decoration:none;border:1px solid rgba(255,92,0,0.25);padding:8px 18px;border-radius:20px;transition:all 0.3s}
+  .btn-voltar:hover{background:var(--laranja);color:#fff}
+  .hero{padding:68px 32px 44px;text-align:center;background:linear-gradient(180deg,#0A0705 0%,var(--preto) 100%)}
+  .hero-tag{display:inline-block;font-size:0.6rem;font-weight:600;letter-spacing:0.4em;text-transform:uppercase;color:var(--laranja);margin-bottom:18px}
+  .hero h1{font-family:var(--serif);font-size:clamp(1.6rem,5vw,2.5rem);font-weight:400;line-height:1.2;margin-bottom:10px}
+  .hero h1 em{font-style:italic;color:var(--laranja)}
+  .hero-line{width:60px;height:2px;background:var(--laranja);margin:20px auto}
+  .hero p{font-size:0.93rem;color:var(--claro);font-weight:300;max-width:660px;margin:0 auto;line-height:1.7}
+  .container{max-width:920px;margin:0 auto;padding:0 32px}
+  .section{padding:48px 0 16px}
+  .section-header{text-align:center;margin-bottom:32px}
+  .section-tag{font-size:0.6rem;font-weight:600;letter-spacing:0.35em;text-transform:uppercase;color:var(--laranja);margin-bottom:12px}
+  .section-title{font-family:var(--serif);font-size:1.5rem;font-weight:400}
+  .section-title em{font-style:italic;color:var(--laranja)}
+  .section-sub{font-size:0.9rem;color:var(--claro);font-weight:300;max-width:680px;margin:10px auto 0;line-height:1.75}
+  .divider{width:100%;height:1px;background:linear-gradient(90deg,transparent,rgba(255,92,0,0.15),transparent);margin:36px 0 0}
+  .tipo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media(max-width:780px){.tipo-grid{grid-template-columns:1fr}}
+  .tipo-card{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:24px;position:relative}
+  .tipo-card.topo{border-top:3px solid var(--verde)}
+  .tipo-card.meio{border-top:3px solid var(--azul)}
+  .tipo-card.fundo{border-top:3px solid var(--laranja)}
+  .tipo-num{font-family:var(--serif);font-size:2rem;line-height:1;margin-bottom:6px}
+  .topo .tipo-num{color:var(--verde)} .meio .tipo-num{color:var(--azul)} .fundo .tipo-num{color:var(--laranja)}
+  .tipo-card h3{font-size:0.78rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:8px}
+  .tipo-card .papel{font-size:0.8rem;color:var(--claro);font-weight:500;margin-bottom:10px}
+  .tipo-card p{font-size:0.84rem;color:#BBB;font-weight:300;line-height:1.65}
+  .bloco{background:var(--card);border:1px solid var(--borda);border-radius:14px;padding:24px 28px;margin:16px 0}
+  .bloco h4{font-size:0.68rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--laranja);margin-bottom:14px}
+  .bloco p{font-size:0.88rem;color:#CCC;font-weight:300;line-height:1.75}
+  .bloco p strong{color:var(--branco);font-weight:600}
+  .ordem{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:18px 0 6px}
+  .ordem span{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;padding:8px 16px;border-radius:16px}
+  .ordem .t{background:rgba(34,197,94,0.1);color:var(--verde);border:1px solid rgba(34,197,94,0.3)}
+  .ordem .m{background:rgba(59,130,246,0.1);color:var(--azul);border:1px solid rgba(59,130,246,0.3)}
+  .ordem .f{background:rgba(255,92,0,0.1);color:var(--laranja);border:1px solid rgba(255,92,0,0.3)}
+  .ordem .seta{color:var(--claro);padding:8px 0}
+  .ex-lista{list-style:none}
+  .ex-lista li{font-size:0.86rem;color:#BBB;font-weight:300;padding:9px 0 9px 24px;position:relative;border-bottom:1px solid rgba(255,255,255,0.04);line-height:1.6}
+  .ex-lista li:last-child{border-bottom:none}
+  .ex-lista li::before{content:'→';position:absolute;left:0;color:var(--laranja);font-weight:700}
+  .ex-lista li strong{color:var(--branco);font-weight:600}
+  .ex-lista li em{color:var(--ouro);font-style:normal}
+  .semana-tabela{width:100%;border-collapse:collapse;background:var(--card);border-radius:14px;overflow:hidden;border:1px solid var(--borda)}
+  .semana-tabela th{background:var(--medio);padding:11px 16px;text-align:left;font-size:0.66rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--claro)}
+  .semana-tabela td{padding:12px 16px;border-top:1px solid rgba(255,255,255,0.04);font-size:0.85rem;color:#CCC;font-weight:300;vertical-align:top}
+  .semana-tabela td:first-child{font-weight:600;color:var(--branco);width:110px}
+  .regras{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  @media(max-width:720px){.regras{grid-template-columns:1fr}}
+  .regra-mini{background:var(--card);border:1px solid var(--borda);border-left:3px solid var(--laranja);border-radius:0 12px 12px 0;padding:16px 20px}
+  .regra-mini h5{font-size:0.86rem;font-weight:600;margin-bottom:4px}
+  .regra-mini p{font-size:0.8rem;color:#AAA;font-weight:300;line-height:1.6}
+  .footer{text-align:center;padding:44px 32px 30px;border-top:1px solid var(--borda);margin-top:48px}
+  .footer-brand{font-family:var(--serif);font-size:1rem;color:rgba(255,255,255,0.6);margin-bottom:8px}
+  .footer-brand em{font-style:italic;color:var(--laranja)}
+  .footer-sub{font-size:0.72rem;color:rgba(255,255,255,0.3);font-weight:300}
+  @media(max-width:600px){.top-bar{padding:12px 16px}.top-bar-name{display:none}.container{padding:0 16px}}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <span class="top-bar-name">ADS <em>Company</em></span>
+  <a href="index.html" class="btn-voltar">&larr; Calend&aacute;rio de Conte&uacute;do</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Leia antes do calend&aacute;rio</div>
+  <h1>A estrat&eacute;gia por tr&aacute;s do <em>conte&uacute;do</em></h1>
+  <div class="hero-line"></div>
+  <p>Antes de gravar qualquer v&iacute;deo, entenda o porqu&ecirc; de cada coisa. Esta p&aacute;gina explica como os Reels e os Stories do Rei dos Importados funcionam juntos para encher a loja &mdash; e &eacute; a base de todos os calend&aacute;rios mensais.</p>
+</div>
+
+<div class="divider"></div>
+
+<div class="container">
+
+  <!-- A LOGICA -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">A l&oacute;gica</div>
+      <div class="section-title">Reels alcan&ccedil;a. Stories <em>vende todo dia.</em></div>
+      <p class="section-sub">S&atilde;o duas ferramentas com pap&eacute;is diferentes: o <strong style="color:var(--branco)">Reels</strong> &eacute; o que o Instagram mostra para quem ainda n&atilde;o conhece a loja &mdash; &eacute; ele que traz gente nova. O <strong style="color:var(--branco)">Story</strong> &eacute; a conversa di&aacute;ria com quem j&aacute; segue &mdash; &eacute; ele que transforma seguidor em cliente. Um sem o outro manca.</p>
+    </div>
+  </div>
+
+  <!-- 3-1-1 -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Reels &middot; A cad&ecirc;ncia 3-1-1</div>
+      <div class="section-title">A cada 5 Reels: <em>3 + 1 + 1</em></div>
+      <p class="section-sub">A maioria dos perfis de loja morre por um de dois erros: s&oacute; publica oferta (ningu&eacute;m novo chega) ou s&oacute; publica v&iacute;deo engra&ccedil;ado (muita visualiza&ccedil;&atilde;o, nenhuma venda). O 3-1-1 alimenta as tr&ecirc;s etapas ao mesmo tempo.</p>
+    </div>
+
+    <div class="tipo-grid">
+      <div class="tipo-card topo">
+        <div class="tipo-num">3</div>
+        <h3 style="color:var(--verde)">Topo &mdash; encher a sala</h3>
+        <div class="papel">Para quem ainda n&atilde;o conhece a loja</div>
+        <p>V&iacute;deos de 5 a 15 segundos que fazem a pessoa parar o dedo, rir ou se reconhecer. N&atilde;o vendem nada &mdash; o trabalho deles &eacute; alcan&ccedil;ar gente nova. Frase grande na tela (a maioria assiste no mudo) e gancho nos 2 primeiros segundos.</p>
+      </div>
+      <div class="tipo-card meio">
+        <div class="tipo-num">1</div>
+        <h3 style="color:var(--azul)">Meio &mdash; gerar confian&ccedil;a</h3>
+        <div class="papel">Para quem chegou e est&aacute; decidindo se confia</div>
+        <p>V&iacute;deos de 20 a 45 segundos mostrando o real: bastidor da assist&ecirc;ncia, teste de aparelho na frente do cliente, chegada de encomenda. &Eacute; a prova de que a loja existe e entrega.</p>
+      </div>
+      <div class="tipo-card fundo">
+        <div class="tipo-num">1</div>
+        <h3 style="color:var(--laranja)">Fundo &mdash; passar o cart&atilde;o</h3>
+        <div class="papel">Para quem s&oacute; precisa de um empurr&atilde;o</div>
+        <p>V&iacute;deos de 15 a 30 segundos com oferta clara e UM chamado s&oacute;: &ldquo;chama no WhatsApp&rdquo;. Pode usar urg&ecirc;ncia quando for verdade (estoque, prazo, condi&ccedil;&atilde;o da semana).</p>
+      </div>
+    </div>
+
+    <div class="bloco">
+      <h4>A ordem dentro da semana</h4>
+      <div class="ordem">
+        <span class="t">TOPO</span><span class="seta">&rarr;</span>
+        <span class="t">TOPO</span><span class="seta">&rarr;</span>
+        <span class="m">MEIO</span><span class="seta">&rarr;</span>
+        <span class="t">TOPO</span><span class="seta">&rarr;</span>
+        <span class="f">FUNDO</span>
+      </div>
+      <p style="text-align:center">5 Reels por semana fecha um ciclo completo. Se a semana render s&oacute; 3 v&iacute;deos, mant&eacute;m a propor&ccedil;&atilde;o: nunca dois fundos seguidos, sempre mais topo que o resto. O meio prepara o terreno e o fundo colhe no fim, com o perfil aquecido.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>Como isso fica na pr&aacute;tica, no Rei dos Importados</h4>
+      <ul class="ex-lista">
+        <li><em>TOPO &middot; frase na tela:</em> Luiz atendendo ao fundo, frase por cima: <strong>&ldquo;Vim s&oacute; perguntar o pre&ccedil;o&rdquo; &mdash; cliente que saiu com celular novo e capa combinando.</strong></li>
+        <li><em>TOPO &middot; novelinha:</em> Luiz faz os dois pap&eacute;is &mdash; cliente desconfiado (&ldquo;importado presta?&rdquo;) &times; vendedor que liga o aparelho na hora e testa na frente dele.</li>
+        <li><em>TOPO &middot; flagrante:</em> a cena que todo cliente da feira reconhece: pedir desconto depois do desconto.</li>
+        <li><em>MEIO &middot; bastidor:</em> uma tela trocada do come&ccedil;o ao fim em 30 segundos, com o celular ligando no final.</li>
+        <li><em>MEIO &middot; antes e depois:</em> aparelho com a tela estourada &rarr; aparelho pronto, come&ccedil;ando pelo DEPOIS.</li>
+        <li><em>FUNDO &middot; oferta direta:</em> &ldquo;Essa semana o kit completo sai de brinde. Chama no WhatsApp e garante o seu.&rdquo;</li>
+        <li><em>FUNDO &middot; prova:</em> print de agradecimento narrado + &ldquo;amanh&atilde; o pr&oacute;ximo pode ser voc&ecirc;&rdquo;.</li>
+      </ul>
+    </div>
+
+    <div class="bloco">
+      <h4>Todo Reel tem 3 blocos</h4>
+      <p><strong>1. Gancho (0 a 3s):</strong> a frase ou cena que paralisa o dedo &mdash; &eacute; 70% do resultado do v&iacute;deo. <strong>2. Desenvolvimento:</strong> entrega o que o gancho prometeu, sem &ldquo;oi gente&rdquo;, sem logo animada &mdash; come&ccedil;a dentro do assunto. <strong>3. Fechamento com dire&ccedil;&atilde;o:</strong> todo v&iacute;deo termina apontando para algo &mdash; &ldquo;marca aquele amigo&rdquo;, &ldquo;salva pra depois&rdquo; e, no fundo, &ldquo;chama no WhatsApp&rdquo;.</p>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- STORIES -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Stories &middot; a loja aberta no bolso</div>
+      <div class="section-title">A estrat&eacute;gia de <em>Stories</em></div>
+      <p class="section-sub">O story n&atilde;o precisa viralizar &mdash; ele precisa ser constante. Quem assiste story todo dia compra sem nem perguntar muito, porque j&aacute; entrou na loja dezenas de vezes pelo celular. A meta: <strong style="color:var(--branco)">3 a 5 stories por dia, todos os dias</strong>.</p>
+    </div>
+
+    <div class="bloco">
+      <h4>A espinha da semana (o que postar em cada dia)</h4>
+      <table class="semana-tabela">
+        <thead><tr><th>Dia</th><th>Tema do dia</th></tr></thead>
+        <tbody>
+          <tr><td>Segunda</td><td><strong>Chegou no Rei:</strong> as novidades da semana &mdash; caixa abrindo, aparelho ligando pela primeira vez</td></tr>
+          <tr><td>Ter&ccedil;a</td><td><strong>Bancada em a&ccedil;&atilde;o:</strong> a assist&ecirc;ncia trabalhando &mdash; antes e depois, tela trocando, cliente buscando o aparelho pronto</td></tr>
+          <tr><td>Quarta</td><td><strong>Pergunta pro povo:</strong> enquete ou caixinha (&ldquo;iPhone ou Android?&rdquo;, &ldquo;qual produto voc&ecirc; quer que o Rei traga do Paraguai?&rdquo;) &mdash; resposta de enquete treina o Instagram a entregar seus stories</td></tr>
+          <tr><td>Quinta</td><td><strong>Prova de cliente:</strong> print de agradecimento, cliente retirando aparelho, encomenda entregue</td></tr>
+          <tr><td>Sexta</td><td><strong>Oferta da semana:</strong> a condi&ccedil;&atilde;o do fim de semana com link direto pro WhatsApp</td></tr>
+          <tr><td>S&aacute;bado</td><td><strong>A feira viva:</strong> o movimento, a loja cheia, a correria &mdash; loja movimentada d&aacute; vontade de ir</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="regras">
+      <div class="regra-mini"><h5>O primeiro story do dia nunca &eacute; oferta</h5><p>Abre com gente, bastidor ou novidade. Quem abre vendendo &eacute; pulado no dia seguinte.</p></div>
+      <div class="regra-mini"><h5>Todo dia tem UM story com convite</h5><p>Um por dia com a figurinha de link do WhatsApp &mdash; nem mais (cansa), nem menos (n&atilde;o vende).</p></div>
+      <div class="regra-mini"><h5>Story bom vira destaque</h5><p>Novidade vai para &ldquo;Celulares&rdquo;, conserto para &ldquo;Assist&ecirc;ncia&rdquo;, agradecimento para &ldquo;Clientes&rdquo;, encomenda para &ldquo;Encomendas&rdquo; &mdash; no mesmo dia.</p></div>
+      <div class="regra-mini"><h5>Feio e verdadeiro &gt; bonito e parado</h5><p>Story &eacute; bastidor, n&atilde;o com&eacute;rcio de TV. Gravou, conferiu o portugu&ecirc;s, postou.</p></div>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PRODUCAO -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-tag">Produ&ccedil;&atilde;o</div>
+      <div class="section-title">Regras para <em>gravar</em></div>
+    </div>
+    <div class="regras">
+      <div class="regra-mini"><h5>Celular em p&eacute; (vertical), sempre</h5><p>Luz de frente (nunca de costas pra porta/janela). Fim de tarde escuro = v&iacute;deo ruim.</p></div>
+      <div class="regra-mini"><h5>Grava&ccedil;&atilde;o em lote</h5><p>1h30 por semana grava os 5 Reels do ciclo de uma vez. Trocar a camisa entre v&iacute;deos d&aacute; sensa&ccedil;&atilde;o de dias diferentes.</p></div>
+      <div class="regra-mini"><h5>Legenda embutida em todo v&iacute;deo com fala</h5><p>8 em cada 10 pessoas assistem no mudo. Sem legenda, o v&iacute;deo morre calado.</p></div>
+      <div class="regra-mini"><h5>Sem perfeccionismo</h5><p>V&iacute;deo real e no prazo vale mais que v&iacute;deo perfeito atrasado. Rosto e gente de verdade sempre rendem mais que arte parada.</p></div>
+    </div>
+    <div class="bloco">
+      <h4>A regra de linguagem (inegoci&aacute;vel)</h4>
+      <p>Todo v&iacute;deo fala do que o cliente <strong>ganha</strong>, nunca do processo pelo nome t&eacute;cnico. &Eacute; &ldquo;seu celular pronto no mesmo dia&rdquo;, n&atilde;o &ldquo;reballing de placa&rdquo;. &Eacute; &ldquo;testado na sua frente&rdquo;, n&atilde;o &ldquo;controle de qualidade&rdquo;. E portugu&ecirc;s impec&aacute;vel em toda frase de tela e legenda.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">ADS <em>Company</em> &mdash; Assessoria de Marketing e Performance</div>
+  <div class="footer-sub">Estrat&eacute;gia de Conte&uacute;do &mdash; Rei dos Importados &mdash; Novembro/2026</div>
+</div>
+
+</body>
+</html>
