@@ -1,0 +1,93 @@
+{
+  "dias": [
+    {
+      "data": "2026-11-26",
+      "investido": 0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "engajamentos": 0,
+      "campanhas": {
+        "A | Barreiras": {
+          "investido": 0.0,
+          "conversas": 0,
+          "alcance": 0
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    }
+  ],
+  "grupos": [
+    {
+      "id": "120252127047560749",
+      "nome": "[REI] Barreiras — Conversas WhatsApp",
+      "investido": 0.0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    }
+  ],
+  "anuncios": [
+    {
+      "id": "120252127050750749",
+      "nome": "[REI] Vídeo Crediário 18x — legendado",
+      "grupo": "A",
+      "investido": 0.0,
+      "conversas": 0,
+      "alcance": 0,
+      "impressoes": 0,
+      "cliques": 0,
+      "status": "ACTIVE"
+    }
+  ],
+  "leitura": "<strong>Campanha no ar desde hoje, 26/11!</strong> Ainda não há gasto nem conversas registradas, o que é normal nas primeiras horas: a Meta está começando a mostrar o anúncio para as pessoas certas em Barreiras. Nos próximos dias já teremos os primeiros números de investimento e conversas no WhatsApp para acompanhar.",
+  "alcance_unico": {
+    "ate": "2026-11-26",
+    "7": {
+      "alcance": 0,
+      "impressoes": 0,
+      "grupos": {
+        "A | Barreiras": 0
+      }
+    },
+    "14": {
+      "alcance": 0,
+      "impressoes": 0,
+      "grupos": {
+        "A | Barreiras": 0
+      }
+    },
+    "30": {
+      "alcance": 0,
+      "impressoes": 0,
+      "grupos": {
+        "A | Barreiras": 0
+      }
+    },
+    "mes": {
+      "alcance": 0,
+      "impressoes": 0,
+      "grupos": {
+        "A | Barreiras": 0
+      }
+    },
+    "tudo": {
+      "alcance": 0,
+      "impressoes": 0,
+      "grupos": {
+        "A | Barreiras": 0
+      }
+    }
+  },
+  "campanha": {
+    "status": "ACTIVE"
+  },
+  "atualizado_em": "2026-11-26T11:40:00-03:00",
+  "atualizacoes": [
+    "2026-11-26T11:40:00-03:00"
+  ]
+}
