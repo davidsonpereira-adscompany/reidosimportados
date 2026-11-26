@@ -1,12 +1,14 @@
 {
   "evolution_url": "https://evolutionv2.adscompany.app.br",
   "instancia": "ADS COMPANY DC",
-  "destinos": [],
+  "destinos": [
+    "120363430996046910@g.us"
+  ],
   "copia": [
     "557799982666",
     "5577998993591"
   ],
-  "observacao": "destinos = grupo do cliente (ainda sem grupo; preencher com o JID quando criar). copia = WhatsApp do Davidson. link_painel vazio = segunda mensagem não é enviada (painel ainda em implantação).",
+  "observacao": "destinos = grupo A.C 42 #REI DOS IMPORTADOS + AFL BA (compartilhado com o projeto AFL). copia = WhatsApp do Davidson. link_painel vazio = segunda mensagem não é enviada (painel em implantação).",
   "link_painel": "",
   "mensagem_link": "📊 *Painel de Resultados — Rei dos Importados*\n\nTodos os números dos anúncios, atualizados toda manhã, em uma página só:\n{link}\n\n💡 Toque no *i* ao lado de cada número para ver o que ele quer dizer."
 }
