@@ -2,17 +2,35 @@
   "dias": [
     {
       "data": "2026-11-26",
-      "investido": 0,
-      "conversas": 0,
-      "alcance": 0,
-      "impressoes": 0,
-      "cliques": 0,
-      "engajamentos": 0,
+      "investido": 12.77,
+      "conversas": 8,
+      "alcance": 870,
+      "impressoes": 1046,
+      "cliques": 14,
+      "engajamentos": 208,
       "campanhas": {
         "A | Barreiras": {
-          "investido": 0.0,
-          "conversas": 0,
-          "alcance": 0
+          "investido": 12.77,
+          "conversas": 8,
+          "alcance": 870
+        }
+      },
+      "vendas": null,
+      "valor_vendido": null
+    },
+    {
+      "data": "2026-11-27",
+      "investido": 1.95,
+      "conversas": 3,
+      "alcance": 145,
+      "impressoes": 159,
+      "cliques": 3,
+      "engajamentos": 38,
+      "campanhas": {
+        "A | Barreiras": {
+          "investido": 1.95,
+          "conversas": 3,
+          "alcance": 145
         }
       },
       "vendas": null,
@@ -23,11 +41,11 @@
     {
       "id": "120252127047560749",
       "nome": "[REI] Barreiras — Conversas WhatsApp",
-      "investido": 0.0,
-      "conversas": 0,
-      "alcance": 0,
-      "impressoes": 0,
-      "cliques": 0,
+      "investido": 14.72,
+      "conversas": 11,
+      "alcance": 975,
+      "impressoes": 1205,
+      "cliques": 17,
       "status": "ACTIVE"
     }
   ],
@@ -36,58 +54,59 @@
       "id": "120252127050750749",
       "nome": "[REI] Vídeo Crediário 18x — legendado",
       "grupo": "A",
-      "investido": 0.0,
-      "conversas": 0,
-      "alcance": 0,
-      "impressoes": 0,
-      "cliques": 0,
+      "investido": 14.72,
+      "conversas": 11,
+      "alcance": 975,
+      "impressoes": 1205,
+      "cliques": 17,
       "status": "ACTIVE"
     }
   ],
-  "leitura": "<strong>Campanha no ar desde hoje, 26/11!</strong> Ainda não há gasto nem conversas registradas, o que é normal nas primeiras horas: a Meta está começando a mostrar o anúncio para as pessoas certas em Barreiras. Nos próximos dias já teremos os primeiros números de investimento e conversas no WhatsApp para acompanhar.",
+  "leitura": "<strong>Em apenas 2 dias de campanha, a loja já teve 11 conversas iniciadas no WhatsApp.</strong> Desde o início (26/11) foram investidos R$ 14,72, com um custo médio de cerca de R$ 1,34 por conversa — um começo saudável. Ontem (26/11) o investimento foi de R$ 12,77 e geraram 8 conversas; o grupo A | Barreiras está ativo e sem nenhum problema técnico. Próximo passo: manter o anúncio ativo e acompanhar se o ritmo de conversas se sustenta nos próximos dias.",
   "alcance_unico": {
-    "ate": "2026-11-26",
+    "ate": "2026-11-27",
     "7": {
-      "alcance": 0,
-      "impressoes": 0,
+      "alcance": 975,
+      "impressoes": 1205,
       "grupos": {
-        "A | Barreiras": 0
+        "A | Barreiras": 975
       }
     },
     "14": {
-      "alcance": 0,
-      "impressoes": 0,
+      "alcance": 975,
+      "impressoes": 1205,
       "grupos": {
-        "A | Barreiras": 0
+        "A | Barreiras": 975
       }
     },
     "30": {
-      "alcance": 0,
-      "impressoes": 0,
+      "alcance": 975,
+      "impressoes": 1205,
       "grupos": {
-        "A | Barreiras": 0
+        "A | Barreiras": 975
       }
     },
     "mes": {
-      "alcance": 0,
-      "impressoes": 0,
+      "alcance": 975,
+      "impressoes": 1205,
       "grupos": {
-        "A | Barreiras": 0
+        "A | Barreiras": 975
       }
     },
     "tudo": {
-      "alcance": 0,
-      "impressoes": 0,
+      "alcance": 975,
+      "impressoes": 1205,
       "grupos": {
-        "A | Barreiras": 0
+        "A | Barreiras": 975
       }
     }
   },
   "campanha": {
     "status": "ACTIVE"
   },
-  "atualizado_em": "2026-11-26T11:40:00-03:00",
+  "atualizado_em": "2026-11-27T07:15:00-03:00",
   "atualizacoes": [
-    "2026-11-26T11:40:00-03:00"
+    "2026-11-26T11:40:00-03:00",
+    "2026-11-27T07:15:00-03:00"
   ]
 }
